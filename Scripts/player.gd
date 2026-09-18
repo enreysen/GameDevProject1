@@ -26,11 +26,9 @@ func _physics_process(delta: float) -> void:
 	# idea is player keeps moving forward
 	# they move faster if looking right, slower if looking left
 	if move_input == 1.0:
-		print("looing right")
 		velocity.x = 2 * move_speed
 	elif move_input == -1.0:
 		velocity.x = move_speed * 0.5
-		print("looking left")
 	else:
 		velocity.x = move_speed 
 	

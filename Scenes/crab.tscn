@@ -3,7 +3,45 @@
 [ext_resource type="Texture2D" uid="uid://hf0ajxgn6i20" path="res://Sprites/Entities/Crab Sprite Sheet.png" id="1_rxqea"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rxqea"]
-size = Vector2(111, 58)
+size = Vector2(113, 53)
+
+[sub_resource type="Animation" id="Animation_384rs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [5]
+}
+
+[sub_resource type="Animation" id="Animation_rxqea"]
+resource_name = "crab_walking"
+length = 1.0333333
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.16666672, 0.033333287, 0.29999995, 0.5666666, 0.8333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [3, 4, 5, 6, 7]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_384rs"]
+_data = {
+&"RESET": SubResource("Animation_384rs"),
+&"crab_walking": SubResource("Animation_rxqea")
+}
 
 [node name="Crab" type="Area2D" unique_id=2141718950]
 
@@ -13,7 +51,11 @@ scale = Vector2(6.1249995, 5.90625)
 texture = ExtResource("1_rxqea")
 hframes = 4
 vframes = 4
+frame = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1706575480]
-position = Vector2(-81.5, -29)
+position = Vector2(-81.5, -27)
 shape = SubResource("RectangleShape2D_rxqea")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=388061669]
+libraries/ = SubResource("AnimationLibrary_384rs")
