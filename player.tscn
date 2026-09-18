@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://c6nixe4dxbked"]
+
+[ext_resource type="Texture2D" uid="uid://iabkp7d3dvrv" path="res://Sprites/Entities/character_0006.png" id="1_4flbx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g5dd7"]
+size = Vector2(20, 24)
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=67976220]
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1852300113]
+position = Vector2(0, -2)
+texture = ExtResource("1_4flbx")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=885319215]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_g5dd7")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2019193144]
+position = Vector2(0, -75)
+zoom = Vector2(2, 2)
