@@ -5,11 +5,13 @@
 [ext_resource type="TileSet" uid="uid://by8j8sx37s0ep" path="res://Sprites/Tiles/placeholder_tile_set.tres" id="3_21xkr"]
 [ext_resource type="PackedScene" uid="uid://c6odshslp0owr" path="res://Scenes/moving_wall.tscn" id="4_jjvhh"]
 [ext_resource type="Script" uid="uid://ch4gqmbbxwjdx" path="res://Scripts/moving_wall.gd" id="5_kry3j"]
+[ext_resource type="PackedScene" uid="uid://putqfo33qovd" path="res://Scenes/crab.tscn" id="6_21xkr"]
+[ext_resource type="Script" uid="uid://meg5usovlrq0" path="res://Scripts/crab.gd" id="7_6bp64"]
 
 [node name="Main" type="Node2D" unique_id=1515015212]
 
 [node name="Player" parent="." unique_id=67976220 instance=ExtResource("1_jjvhh")]
-position = Vector2(74, 527)
+position = Vector2(192, 531)
 script = ExtResource("2_kry3j")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1534868249]
@@ -18,5 +20,9 @@ tile_map_data = PackedByteArray("AAAAACIAAAAFAAAAAAABACIAAAAFAAAAAAACACIAAAAFAAA
 tile_set = ExtResource("3_21xkr")
 
 [node name="AnimatableBody2D" parent="." unique_id=1445278934 instance=ExtResource("4_jjvhh")]
-position = Vector2(354, 425)
+position = Vector2(390, 420)
 script = ExtResource("5_kry3j")
+
+[node name="Crab" parent="." unique_id=2141718950 instance=ExtResource("6_21xkr")]
+position = Vector2(159, 541)
+script = ExtResource("7_6bp64")
