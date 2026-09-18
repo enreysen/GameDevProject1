@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cnn6f1iv1culq"]
+
+[ext_resource type="Texture2D" uid="uid://dv7ucg66755v3" path="res://Sprites/Tiles/tile_0151.png" id="1_f8cdk"]
+[ext_resource type="Script" uid="uid://udttd4frarhk" path="res://Scripts/projectile.gd" id="1_yr2qt"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g5dd7"]
+radius = 7.0
+
+[node name="Projectile" type="CharacterBody2D" unique_id=234181791 groups=["Projectile"]]
+script = ExtResource("1_yr2qt")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1708446554]
+texture = ExtResource("1_f8cdk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=791392064]
+shape = SubResource("CircleShape2D_g5dd7")

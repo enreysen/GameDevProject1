@@ -59,3 +59,9 @@ shape = SubResource("RectangleShape2D_rxqea")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=388061669]
 libraries/ = SubResource("AnimationLibrary_384rs")
+
+[node name="HealthBar" type="ProgressBar" parent="." unique_id=498395481]
+offset_left = -125.0
+offset_top = -164.0
+offset_right = -39.0
+offset_bottom = -137.0
