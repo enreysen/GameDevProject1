@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://crxwbcce6c5ip"]
+
+[ext_resource type="Texture2D" uid="uid://drfus6n0763wq" path="res://Sprites/Objects/object_barrel_light.png" id="1_3w4xy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g5dd7"]
+size = Vector2(24, 27)
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=2121904631]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=373760688]
+z_index = 1
+position = Vector2(21, -1.5)
+shape = SubResource("RectangleShape2D_g5dd7")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=994672344]
+position = Vector2(25, -0.9999995)
+scale = Vector2(1.2297298, 1.28125)
+texture = ExtResource("1_3w4xy")
+hframes = 6
