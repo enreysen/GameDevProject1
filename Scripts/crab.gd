@@ -21,7 +21,6 @@ func _on_body_entered(body: Node2D) -> void:
 	
 	# if projectile hits crab hit box, remove health and remove projectile
 	if body.is_in_group("Projectile"):
-		print("Crab Hit")
 		_remove_health()
 		body.queue_free()
 
