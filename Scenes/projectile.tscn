@@ -2,9 +2,13 @@
 
 [ext_resource type="Texture2D" uid="uid://dv7ucg66755v3" path="res://Sprites/Tiles/tile_0151.png" id="1_f8cdk"]
 [ext_resource type="Script" uid="uid://udttd4frarhk" path="res://Scripts/projectile.gd" id="1_yr2qt"]
+[ext_resource type="Script" uid="uid://dsdmaro78noog" path="res://Scripts/area_2d.gd" id="3_tl4hk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g5dd7"]
 radius = 7.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x4txr"]
+radius = 8.0
 
 [node name="Projectile" type="CharacterBody2D" unique_id=234181791 groups=["Projectile"]]
 script = ExtResource("1_yr2qt")
@@ -14,3 +18,11 @@ texture = ExtResource("1_f8cdk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=791392064]
 shape = SubResource("CircleShape2D_g5dd7")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=811163634]
+script = ExtResource("3_tl4hk")
+
+[node name="Area2D Collison" type="CollisionShape2D" parent="Area2D" unique_id=956439608]
+shape = SubResource("CircleShape2D_x4txr")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

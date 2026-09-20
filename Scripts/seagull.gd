@@ -23,7 +23,5 @@ func _physics_process(delta: float) -> void:
 			target_pos = start_pos
 
 func _on_body_entered(body: Node2D) -> void:
-	if not body.is_in_group("Player"): # Replace with function body.
-		return
-		
-	print("Slow Player")
+	if body.is_in_group("Player"): # Replace with function body.
+		print("Stun Player")

@@ -57,7 +57,7 @@ frame = 5
 position = Vector2(-81.5, -27)
 shape = SubResource("RectangleShape2D_rxqea")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=388061669]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=388061669 groups=["Crab"]]
 libraries/ = SubResource("AnimationLibrary_384rs")
 
 [node name="HealthBar" type="ProgressBar" parent="." unique_id=498395481]
