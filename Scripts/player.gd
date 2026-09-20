@@ -26,12 +26,10 @@ func _physics_process(delta: float) -> void:
 		velocity.y += gravity * delta
 		
 	if stunned:
-		print("currently stunned")
 		await get_tree().create_timer(5.0).timeout 
 		move_speed = 0
 	else:
 		move_speed = 30
-		print("not stunned")
 		
 	move_input = Input.get_axis("move_left", "move_right")
 	# idea is player keeps moving forward

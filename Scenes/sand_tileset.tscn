@@ -26,3 +26,12 @@ position = Vector2(640, 500)
 
 [node name="Seagull" parent="." unique_id=701119995 groups=["Seagull"] instance=ExtResource("3_lia0d")]
 position = Vector2(513, 522)
+collision_mask = 9
+
+[node name="Seagull2" parent="." unique_id=773013994 groups=["Seagull"] instance=ExtResource("3_lia0d")]
+position = Vector2(616, 415)
+collision_mask = 9
+
+[node name="Seagull3" parent="." unique_id=349827029 groups=["Seagull"] instance=ExtResource("3_lia0d")]
+position = Vector2(386, 460)
+collision_mask = 9

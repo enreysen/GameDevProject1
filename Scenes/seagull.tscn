@@ -45,8 +45,9 @@ _data = {
 }
 
 [node name="Seagull" type="Area2D" unique_id=701119995]
+collision_layer = 8
 script = ExtResource("1_fpxi3")
-move_direction = Vector2(-100, 0)
+move_direction = Vector2(-10000, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=557687795]
 position = Vector2(-1.75, -2.5)
