@@ -24,12 +24,66 @@ position = Vector2(640, 528)
 [node name="Barrel5" parent="." unique_id=1077761757 instance=ExtResource("3_i1act")]
 position = Vector2(640, 500)
 
+[node name="Barrel6" parent="." unique_id=1114526781 instance=ExtResource("3_i1act")]
+position = Vector2(1315, 526)
+
+[node name="Barrel11" parent="." unique_id=1827523062 instance=ExtResource("3_i1act")]
+position = Vector2(1232, 525)
+
+[node name="Barrel7" parent="." unique_id=1783835947 instance=ExtResource("3_i1act")]
+position = Vector2(1138, 525)
+
+[node name="Barrel8" parent="." unique_id=2007589887 instance=ExtResource("3_i1act")]
+position = Vector2(914, 526)
+
+[node name="Barrel9" parent="." unique_id=1432897897 instance=ExtResource("3_i1act")]
+position = Vector2(879, 527)
+
+[node name="Barrel10" parent="." unique_id=7810421 instance=ExtResource("3_i1act")]
+position = Vector2(788, 527)
+
 [node name="Seagull" parent="." unique_id=701119995 groups=["Seagull"] instance=ExtResource("3_lia0d")]
-position = Vector2(513, 522)
+position = Vector2(512, 505)
 collision_mask = 9
 
 [node name="Seagull2" parent="." unique_id=773013994 groups=["Seagull"] instance=ExtResource("3_lia0d")]
 position = Vector2(616, 415)
+collision_mask = 9
+
+[node name="Seagull4" parent="." unique_id=207206485 groups=["Seagull"] instance=ExtResource("3_lia0d")]
+position = Vector2(938, 491)
+collision_mask = 9
+
+[node name="Seagull5" parent="." unique_id=1178348999 groups=["Seagull"] instance=ExtResource("3_lia0d")]
+position = Vector2(868, 527)
+collision_mask = 9
+
+[node name="Seagull6" parent="." unique_id=2059713403 groups=["Seagull"] instance=ExtResource("3_lia0d")]
+position = Vector2(1182, 495)
+collision_mask = 9
+
+[node name="Seagull7" parent="." unique_id=1230928815 groups=["Seagull"] instance=ExtResource("3_lia0d")]
+position = Vector2(1226, 495)
+collision_mask = 9
+
+[node name="Seagull9" parent="." unique_id=1494244238 groups=["Seagull"] instance=ExtResource("3_lia0d")]
+position = Vector2(1311, 493)
+collision_mask = 9
+
+[node name="Seagull10" parent="." unique_id=1429333743 groups=["Seagull"] instance=ExtResource("3_lia0d")]
+position = Vector2(1357, 492)
+collision_mask = 9
+
+[node name="Seagull11" parent="." unique_id=1326959294 groups=["Seagull"] instance=ExtResource("3_lia0d")]
+position = Vector2(1445, 492)
+collision_mask = 9
+
+[node name="Seagull12" parent="." unique_id=988803799 groups=["Seagull"] instance=ExtResource("3_lia0d")]
+position = Vector2(1489, 492)
+collision_mask = 9
+
+[node name="Seagull13" parent="." unique_id=1954802718 groups=["Seagull"] instance=ExtResource("3_lia0d")]
+position = Vector2(1532, 491)
 collision_mask = 9
 
 [node name="Seagull3" parent="." unique_id=349827029 groups=["Seagull"] instance=ExtResource("3_lia0d")]
