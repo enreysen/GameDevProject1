@@ -1,10 +1,8 @@
 [gd_scene format=4 uid="uid://bjo7y15dgispl"]
 
 [ext_resource type="TileSet" uid="uid://c7un46n2blnml" path="res://Sprites/Tiles/sand_tiles.tres" id="1_1gpbp"]
-[ext_resource type="Script" uid="uid://dwqsco3dlsdx2" path="res://Scripts/barrel.gd" id="3_8fvi1"]
 [ext_resource type="PackedScene" uid="uid://crxwbcce6c5ip" path="res://Scenes/barrel.tscn" id="3_i1act"]
 [ext_resource type="PackedScene" uid="uid://bltyxqbg846le" path="res://Scenes/seagull.tscn" id="3_lia0d"]
-[ext_resource type="Script" uid="uid://0pbj2w3h2xf2" path="res://Scripts/seagull.gd" id="4_lia0d"]
 
 [node name="Sand Tileset" type="TileMapLayer" unique_id=2097602863]
 z_index = -50
@@ -13,7 +11,6 @@ tile_set = ExtResource("1_1gpbp")
 
 [node name="Barrel" parent="." unique_id=2121904631 instance=ExtResource("3_i1act")]
 position = Vector2(228, 531)
-script = ExtResource("3_8fvi1")
 
 [node name="Barrel2" parent="." unique_id=1932823812 instance=ExtResource("3_i1act")]
 position = Vector2(360, 531)
@@ -27,8 +24,5 @@ position = Vector2(640, 528)
 [node name="Barrel5" parent="." unique_id=1077761757 instance=ExtResource("3_i1act")]
 position = Vector2(640, 500)
 
-[node name="Seagull" parent="." unique_id=701119995 instance=ExtResource("3_lia0d")]
+[node name="Seagull" parent="." unique_id=701119995 groups=["Seagull"] instance=ExtResource("3_lia0d")]
 position = Vector2(513, 522)
-script = ExtResource("4_lia0d")
-
-[connection signal="body_entered" from="Seagull" to="Seagull" method="_on_body_entered"]
