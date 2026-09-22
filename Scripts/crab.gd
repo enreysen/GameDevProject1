@@ -1,22 +1,26 @@
 extends Area2D
 
 @export var move_direction: Vector2
-@export var move_speed : float = 20
 @onready var health = $HealthBar
 @onready var anim : AnimationPlayer = $AnimationPlayer
 @onready var node_2d: Node2D = $"."
 
 var mini_crab = preload("res://Scenes/mini_crab.tscn")
-
+var max_health : float = 300
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	health.value = 100
+	health.value = max_health
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	position.x += 0.5
+	if health.value > max_health / 2:
+		position.x += 0.5
+	else: 
+		position.x += 0.70
+
 	_manage_animation()
+	
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
@@ -25,7 +29,11 @@ func _on_body_entered(body: Node2D) -> void:
 	
 	# if projectile hits crab hit box, remove health and remove projectile
 	if body.is_in_group("Projectile"):
-		_remove_health()
+		if health.value > max_health / 2:
+			_remove_health()
+		else:
+			position.x -= 5
+
 		body.queue_free()		
 
 func _on_area_entered(area: Area2D) -> void:
@@ -34,14 +42,11 @@ func _on_area_entered(area: Area2D) -> void:
 		throw_mini_crabs()
 	
 func _remove_health():
-		if health.value <= 0:
-			get_tree().reload_current_scene() # I'll change later
 		health.value -= 1
 		print("Crab health: ", health.value)
 	
 func _manage_animation():
 	anim.play("crab_walking")
-	
 	
 func throw_mini_crabs():
 	for i in range(5):
