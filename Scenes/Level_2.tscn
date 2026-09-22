@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c6odshslp0owr" path="res://Scenes/moving_wall.tscn" id="4_wn4i5"]
 [ext_resource type="Script" uid="uid://ch4gqmbbxwjdx" path="res://Scripts/moving_wall.gd" id="5_2g134"]
 [ext_resource type="PackedScene" uid="uid://6waveewgthtk" path="res://Scenes/ground.tscn" id="5_4ge3q"]
+[ext_resource type="Texture2D" uid="uid://bgx2llbry6l4e" path="res://Sprites/Backgrounds/Underwater Layers/underwater-fantasy-preview.png" id="8_4ge3q"]
 
 [node name="Level2" type="Node2D" unique_id=1459786945]
 
@@ -39,6 +40,28 @@ offset_left = 17.0
 offset_top = -96.0
 offset_right = 93.0
 offset_bottom = -69.0
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=1942175832]
+visible = false
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=295174210]
+motion_mirroring = Vector2(460, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=2017536065]
+visible = false
+position = Vector2(697.50006, 428.99997)
+texture = ExtResource("8_4ge3q")
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=950596616]
+z_index = -4000
+scroll_offset = Vector2(6548, -26)
+repeat_size = Vector2(1379, 0)
+repeat_times = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=2036411419]
+position = Vector2(730.00006, 434.00003)
+scale = Vector2(1.7955732, 1.900868)
+texture = ExtResource("8_4ge3q")
 
 [connection signal="area_entered" from="Crab" to="Crab" method="_on_area_entered"]
 [connection signal="body_entered" from="Crab" to="Crab" method="_on_body_entered"]
