@@ -15,6 +15,13 @@ var move_input : float
 @onready var anim : AnimationPlayer = $AnimationPlayer
 @onready var node_2d: Node2D = $"."
 
+var underwater = false
+
+func _ready() -> void:
+	if node_2d.has_meta("is_underwater"):
+		underwater = node_2d.get_meta("is_underwater")
+		print("is underwater: ", underwater)
+
 # flip sprite
 func _process(delta: float):
 	if velocity.x != 0:
@@ -23,7 +30,10 @@ func _process(delta: float):
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
-		velocity.y += gravity * delta
+		if not underwater:
+			velocity.y += gravity * delta
+		else:
+			velocity.y += (gravity * delta) / 1.5
 		
 	if stunned:
 		move_speed = 0
@@ -46,10 +56,15 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("shoot"):
 		shoot()
 	
-	if Input.is_action_pressed("jump") and is_on_floor() and not stunned:
-		velocity.y = -jump_force
-	elif Input.is_action_just_pressed("jump"):
-		velocity.y += -jump_force * .02
+	if Input.is_action_pressed("jump") and not stunned:
+		if not underwater:
+			if is_on_floor():
+				velocity.y = -jump_force
+			elif Input.is_action_just_pressed("jump"):
+				velocity.y += -jump_force * .02
+				
+		else: 
+			velocity.y = -jump_force / 4
 		
 	move_and_slide()
 

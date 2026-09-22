@@ -16,6 +16,7 @@ position = Vector2(192, 531)
 collision_layer = 5
 collision_mask = 5
 script = ExtResource("2_kry3j")
+metadata/is_underwater = false
 
 [node name="Sand Tileset" parent="." unique_id=2097602863 instance=ExtResource("3_ynf5e")]
 
@@ -24,6 +25,7 @@ position = Vector2(390, 420)
 collision_layer = 8
 collision_mask = 8
 script = ExtResource("5_kry3j")
+metadata/is_underwater = false
 
 [node name="Crab" parent="." unique_id=2141718950 instance=ExtResource("6_21xkr")]
 position = Vector2(159, 541)
