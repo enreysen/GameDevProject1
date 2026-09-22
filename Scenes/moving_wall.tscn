@@ -3,9 +3,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jcw0c"]
 size = Vector2(31, 469)
 
-[node name="AnimatableBody2D" type="AnimatableBody2D" unique_id=1445278934]
+[node name="AnimatableBody2D" type="AnimatableBody2D" unique_id=1445278934 groups=["Wall"]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1863309159]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1863309159 groups=["Wall"]]
 position = Vector2(5.5, -26.5)
 shape = SubResource("RectangleShape2D_jcw0c")
 

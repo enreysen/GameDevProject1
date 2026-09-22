@@ -7,6 +7,8 @@ extends CharacterBody2D
 @export var jump_force : float = 200
 @export var stunned : bool = false
 
+var slowed : bool = false
+
 var bullet_path = preload("res://Scenes/projectile.tscn")
 
 var move_input : float
@@ -47,11 +49,17 @@ func _physics_process(delta: float) -> void:
 	# idea is player keeps moving forward
 	# they move faster if looking right, slower if looking left
 	if move_input == 1.0:
-		velocity.x = 2 * move_speed
+		if not slowed:
+			velocity.x = 2 * move_speed
+		else:
+			velocity.x = move_speed / 5
 	elif move_input == -1.0:
 		velocity.x = move_speed * 0.5
 	else:
-		velocity.x = move_speed 
+		if not slowed:
+			velocity.x = move_speed 
+		else:
+			velocity.x = move_speed / 5
 	
 	# shoot projectile
 	if Input.is_action_just_pressed("shoot"):
@@ -94,3 +102,9 @@ func unstun():
 
 func add_air():
 	air.value += 25
+	
+func slow():
+	slowed = true
+	
+func unslow():
+	slowed = false

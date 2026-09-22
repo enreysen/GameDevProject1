@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bjevs1r1voap4"]
 
 [ext_resource type="Texture2D" uid="uid://ly2ntt7b0tch" path="res://Sprites/Entities/fishing_icons_32x32_39.png" id="1_dldgy"]
-[ext_resource type="Script" uid="uid://cv27omapxlr1x" path="res://Scenes/pufferfish.gd" id="1_fqyin"]
+[ext_resource type="Script" uid="uid://cv27omapxlr1x" path="res://Scripts/pufferfish.gd" id="1_fqyin"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g5dd7"]
 radius = 12.165525

@@ -4,6 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://dhcm7rooksy3u" path="res://Scenes/jellyfish.tscn" id="2_oltiy"]
 [ext_resource type="PackedScene" uid="uid://dmu8vc06tooce" path="res://Scenes/top_limit.tscn" id="3_02qk3"]
 [ext_resource type="PackedScene" uid="uid://bjevs1r1voap4" path="res://Scenes/pufferfish.tscn" id="4_s6h8e"]
+[ext_resource type="PackedScene" uid="uid://cujfypapuoavl" path="res://Scenes/slow_fish_1.tscn" id="5_kv0ry"]
+[ext_resource type="PackedScene" uid="uid://bk7uj8nbh54ng" path="res://Scenes/slow_fish_2.tscn" id="6_ribny"]
 
 [node name="Ground" type="TileMapLayer" unique_id=406941394]
 z_index = -1000
@@ -31,4 +33,32 @@ position = Vector2(925, 357)
 position = Vector2(41, 184)
 
 [node name="Pufferfish" parent="." unique_id=1025957269 instance=ExtResource("4_s6h8e")]
-position = Vector2(1134, 547)
+position = Vector2(1279, 529)
+
+[node name="Pufferfish2" parent="." unique_id=1104327624 instance=ExtResource("4_s6h8e")]
+position = Vector2(2270, 372)
+
+[node name="Pufferfish3" parent="." unique_id=898883630 instance=ExtResource("4_s6h8e")]
+position = Vector2(3336, 490)
+
+[node name="Pufferfish4" parent="." unique_id=2044222968 instance=ExtResource("4_s6h8e")]
+position = Vector2(4417, 420)
+
+[node name="slow_fish_a_1" parent="." unique_id=1895707260 instance=ExtResource("5_kv0ry")]
+position = Vector2(1073, 548)
+move_direction = Vector2(-10000, 0)
+
+[node name="slow_fish_a_3" parent="." unique_id=2001016602 instance=ExtResource("5_kv0ry")]
+position = Vector2(975, 416)
+move_direction = Vector2(-10000, 0)
+
+[node name="slow_fish_a_2" parent="." unique_id=1685318095 instance=ExtResource("5_kv0ry")]
+position = Vector2(605, 392)
+move_direction = Vector2(-10000, 0)
+
+[node name="slow_fish_b" parent="." unique_id=1831972564 instance=ExtResource("6_ribny")]
+position = Vector2(659, 425)
+
+[connection signal="body_entered" from="slow_fish_a_1" to="slow_fish_a_1" method="_on_body_entered"]
+[connection signal="body_entered" from="slow_fish_a_3" to="slow_fish_a_3" method="_on_body_entered"]
+[connection signal="body_entered" from="slow_fish_a_2" to="slow_fish_a_2" method="_on_body_entered"]

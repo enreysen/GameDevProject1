@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bk7uj8nbh54ng"]
+
+[ext_resource type="Script" uid="uid://7e4xyuxppumw" path="res://Scripts/slow_fish.gd" id="1_b120c"]
+[ext_resource type="Texture2D" uid="uid://dw22m4iwqhr6q" path="res://Sprites/Entities/fish.png" id="1_fjicx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b120c"]
+size = Vector2(52.5, 42.1875)
+
+[node name="Area2D" type="Area2D" unique_id=1831972564]
+script = ExtResource("1_b120c")
+move_direction = Vector2(-1000, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1112135219]
+position = Vector2(1.9455175, 3.0500011)
+scale = Vector2(2.0034056, 2.2468748)
+texture = ExtResource("1_fjicx")
+hframes = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1777407991]
+position = Vector2(-0.25, 5.09375)
+shape = SubResource("RectangleShape2D_b120c")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
