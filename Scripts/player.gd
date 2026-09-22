@@ -20,7 +20,6 @@ var underwater = false
 func _ready() -> void:
 	if node_2d.has_meta("is_underwater"):
 		underwater = node_2d.get_meta("is_underwater")
-		print("is underwater: ", underwater)
 
 # flip sprite
 func _process(delta: float):

@@ -32,6 +32,7 @@ position = Vector2(159, 541)
 collision_layer = 5
 collision_mask = 5
 script = ExtResource("7_6bp64")
+metadata/is_underwater = false
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=1510991637]
 

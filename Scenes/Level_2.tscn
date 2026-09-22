@@ -4,20 +4,27 @@
 [ext_resource type="Script" uid="uid://u3gu6doouat0" path="res://Scripts/player.gd" id="2_apq5t"]
 [ext_resource type="PackedScene" uid="uid://putqfo33qovd" path="res://Scenes/crab.tscn" id="2_vgr4u"]
 [ext_resource type="TileSet" uid="uid://cnads75okjq5l" path="res://Sprites/Tiles/underwater_tiles.tres" id="3_ostk4"]
+[ext_resource type="Script" uid="uid://meg5usovlrq0" path="res://Scripts/crab.gd" id="4_4ge3q"]
 [ext_resource type="PackedScene" uid="uid://c6odshslp0owr" path="res://Scenes/moving_wall.tscn" id="4_wn4i5"]
 [ext_resource type="Script" uid="uid://ch4gqmbbxwjdx" path="res://Scripts/moving_wall.gd" id="5_2g134"]
 [ext_resource type="PackedScene" uid="uid://dmu8vc06tooce" path="res://Scenes/top_limit.tscn" id="7_cleky"]
 
 [node name="Level2" type="Node2D" unique_id=1459786945]
 
-[node name="CharacterBody2D" parent="." unique_id=67976220 instance=ExtResource("1_glw66")]
+[node name="CharacterBody2D" parent="." unique_id=67976220 groups=["Player"] instance=ExtResource("1_glw66")]
 position = Vector2(266, 537)
+collision_layer = 5
+collision_mask = 5
 script = ExtResource("2_apq5t")
 gravity = 100.0
 metadata/is_underwater = true
 
 [node name="Crab" parent="." unique_id=2141718950 instance=ExtResource("2_vgr4u")]
-position = Vector2(234, 567)
+position = Vector2(198, 599)
+collision_layer = 1
+collision_mask = 1
+script = ExtResource("4_4ge3q")
+metadata/is_underwater = true
 
 [node name="Ground" type="TileMapLayer" parent="." unique_id=811493151]
 z_index = -1000
@@ -38,3 +45,6 @@ metadata/is_underwater = true
 
 [node name="Top Limit" parent="." unique_id=891863095 instance=ExtResource("7_cleky")]
 position = Vector2(41, 184)
+
+[connection signal="area_entered" from="Crab" to="Crab" method="_on_area_entered"]
+[connection signal="body_entered" from="Crab" to="Crab" method="_on_body_entered"]
