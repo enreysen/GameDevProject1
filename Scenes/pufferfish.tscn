@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bjevs1r1voap4"]
+
+[ext_resource type="Texture2D" uid="uid://ly2ntt7b0tch" path="res://Sprites/Entities/fishing_icons_32x32_39.png" id="1_dldgy"]
+[ext_resource type="Script" uid="uid://cv27omapxlr1x" path="res://Scenes/pufferfish.gd" id="1_fqyin"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g5dd7"]
+radius = 12.165525
+
+[node name="Pufferfish" type="Area2D" unique_id=1025957269]
+script = ExtResource("1_fqyin")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=350477610]
+position = Vector2(6, -7)
+shape = SubResource("CircleShape2D_g5dd7")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1187946561]
+position = Vector2(6.0000014, -6.9999995)
+scale = Vector2(0.71875, 0.625)
+texture = ExtResource("1_dldgy")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

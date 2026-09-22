@@ -63,15 +63,11 @@ func _on_body_entered(body: Node2D) -> void:
 			body.queue_free()
 		else:
 			position.x -= 5
-	else:
-		print("hello")
 
 func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Mini_Crabs"):
 		print("Mini crabs!")
 		throw_mini_crabs()
-	else:
-		print('bruh')
 	
 func _remove_health():
 		health.value -= 1

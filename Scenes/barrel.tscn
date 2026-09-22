@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://crxwbcce6c5ip"]
 
-[ext_resource type="Texture2D" uid="uid://drfus6n0763wq" path="res://Sprites/Objects/object_barrel_light.png" id="1_3w4xy"]
+[ext_resource type="Texture2D" uid="uid://drfus6n0763wq" path="res://Sprites/Entities/object_barrel_light.png" id="1_3w4xy"]
 [ext_resource type="Script" uid="uid://c3n3uwram8hyw" path="res://Scripts/barrel.gd" id="1_m5w3l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g5dd7"]

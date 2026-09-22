@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drfus6n0763wq"
-path="res://.godot/imported/object_barrel_light.png-26d021d6f23bb32eb18b1ff9ebc82907.ctex"
+uid="uid://dw22m4iwqhr6q"
+path="res://.godot/imported/fish.png-c0e107f6eaf1a839bdc8fb9ba7d050c7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Objects/object_barrel_light.png"
-dest_files=["res://.godot/imported/object_barrel_light.png-26d021d6f23bb32eb18b1ff9ebc82907.ctex"]
+source_file="res://Sprites/Entities/fish.png"
+dest_files=["res://.godot/imported/fish.png-c0e107f6eaf1a839bdc8fb9ba7d050c7.ctex"]
 
 [params]
 

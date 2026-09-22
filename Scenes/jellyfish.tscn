@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dhcm7rooksy3u"]
+
+[ext_resource type="Script" uid="uid://cv3xfn1qj6ym8" path="res://Scripts/jellyfish.gd" id="1_cvath"]
+[ext_resource type="Texture2D" uid="uid://030ryhidnfkx" path="res://Sprites/Entities/Jellyfish Sprite Sheet.png" id="1_vhqib"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oltiy"]
+size = Vector2(13, 30)
+
+[node name="Area2D" type="Area2D" unique_id=619110400 groups=["Jellyfish"]]
+script = ExtResource("1_cvath")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1175322766]
+position = Vector2(-16.5, -11)
+shape = SubResource("RectangleShape2D_oltiy")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=920685655]
+position = Vector2(-17.5, -16)
+scale = Vector2(2.09375, 2)
+texture = ExtResource("1_vhqib")
+hframes = 7
+vframes = 5
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
