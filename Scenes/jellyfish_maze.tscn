@@ -1,0 +1,287 @@
+[gd_scene format=3 uid="uid://3ssetifgcnvb"]
+
+[ext_resource type="PackedScene" uid="uid://dhcm7rooksy3u" path="res://Scenes/jellyfish.tscn" id="1_m2a6n"]
+
+[node name="Jellyfish Maze" type="Node" unique_id=1449302884]
+
+[node name="Jellyfish14" parent="." unique_id=619110400 instance=ExtResource("1_m2a6n")]
+position = Vector2(1717, 548)
+
+[node name="Jellyfish15" parent="." unique_id=1354139639 instance=ExtResource("1_m2a6n")]
+position = Vector2(1719, 506)
+
+[node name="Jellyfish19" parent="." unique_id=946880696 instance=ExtResource("1_m2a6n")]
+position = Vector2(1716, 332)
+
+[node name="Jellyfish20" parent="." unique_id=544802780 instance=ExtResource("1_m2a6n")]
+position = Vector2(1764, 341)
+
+[node name="Jellyfish21" parent="." unique_id=1830749398 instance=ExtResource("1_m2a6n")]
+position = Vector2(1820, 360)
+
+[node name="Jellyfish8" parent="." unique_id=399377013 instance=ExtResource("1_m2a6n")]
+position = Vector2(1866, 381)
+
+[node name="Jellyfish22" parent="." unique_id=1489577866 instance=ExtResource("1_m2a6n")]
+position = Vector2(1766, 506)
+
+[node name="Jellyfish23" parent="." unique_id=692130847 instance=ExtResource("1_m2a6n")]
+position = Vector2(1815, 507)
+
+[node name="Jellyfish25" parent="." unique_id=1644051895 instance=ExtResource("1_m2a6n")]
+position = Vector2(1853, 528)
+
+[node name="Jellyfish67" parent="." unique_id=1103343311 instance=ExtResource("1_m2a6n")]
+position = Vector2(1721, 600)
+
+[node name="Jellyfish62" parent="." unique_id=1642379337 instance=ExtResource("1_m2a6n")]
+position = Vector2(1814, 608)
+
+[node name="Jellyfish63" parent="." unique_id=1313928260 instance=ExtResource("1_m2a6n")]
+position = Vector2(1859, 609)
+
+[node name="Jellyfish64" parent="." unique_id=1253387086 instance=ExtResource("1_m2a6n")]
+position = Vector2(1945, 610)
+
+[node name="Jellyfish105" parent="." unique_id=1438771566 instance=ExtResource("1_m2a6n")]
+position = Vector2(1902, 610)
+
+[node name="Jellyfish73" parent="." unique_id=1757777888 instance=ExtResource("1_m2a6n")]
+position = Vector2(1987, 612)
+
+[node name="Jellyfish66" parent="." unique_id=1075002482 instance=ExtResource("1_m2a6n")]
+position = Vector2(2066, 610)
+
+[node name="Jellyfish69" parent="." unique_id=168457395 instance=ExtResource("1_m2a6n")]
+position = Vector2(2024, 608)
+
+[node name="Jellyfish68" parent="." unique_id=1636889691 instance=ExtResource("1_m2a6n")]
+position = Vector2(2118, 610)
+
+[node name="Jellyfish94" parent="." unique_id=263411411 instance=ExtResource("1_m2a6n")]
+position = Vector2(2253, 614)
+
+[node name="Jellyfish95" parent="." unique_id=1979187247 instance=ExtResource("1_m2a6n")]
+position = Vector2(2161, 610)
+
+[node name="Jellyfish96" parent="." unique_id=884960280 instance=ExtResource("1_m2a6n")]
+position = Vector2(2206, 615)
+
+[node name="Jellyfish97" parent="." unique_id=124070294 instance=ExtResource("1_m2a6n")]
+position = Vector2(2640, 616)
+
+[node name="Jellyfish98" parent="." unique_id=649005468 instance=ExtResource("1_m2a6n")]
+position = Vector2(2698, 617)
+
+[node name="Jellyfish99" parent="." unique_id=1299198481 instance=ExtResource("1_m2a6n")]
+position = Vector2(2745, 618)
+
+[node name="Jellyfish100" parent="." unique_id=452073401 instance=ExtResource("1_m2a6n")]
+position = Vector2(2824, 616)
+
+[node name="Jellyfish101" parent="." unique_id=1823913614 instance=ExtResource("1_m2a6n")]
+position = Vector2(2782, 614)
+
+[node name="Jellyfish102" parent="." unique_id=1117732579 instance=ExtResource("1_m2a6n")]
+position = Vector2(2876, 616)
+
+[node name="Jellyfish103" parent="." unique_id=2033573701 instance=ExtResource("1_m2a6n")]
+position = Vector2(2919, 616)
+
+[node name="Jellyfish104" parent="." unique_id=1408518373 instance=ExtResource("1_m2a6n")]
+position = Vector2(2961, 614)
+
+[node name="Jellyfish70" parent="." unique_id=934007012 instance=ExtResource("1_m2a6n")]
+position = Vector2(1766, 606)
+
+[node name="Jellyfish71" parent="." unique_id=1297690966 instance=ExtResource("1_m2a6n")]
+position = Vector2(2333, 406)
+
+[node name="Jellyfish26" parent="." unique_id=1026519204 instance=ExtResource("1_m2a6n")]
+position = Vector2(1900, 554)
+
+[node name="Jellyfish12" parent="." unique_id=1048463655 instance=ExtResource("1_m2a6n")]
+position = Vector2(1925, 399)
+
+[node name="Jellyfish13" parent="." unique_id=777080659 instance=ExtResource("1_m2a6n")]
+position = Vector2(2776, 489)
+
+[node name="Jellyfish51" parent="." unique_id=692681983 instance=ExtResource("1_m2a6n")]
+position = Vector2(2584, 336)
+
+[node name="Jellyfish52" parent="." unique_id=132753543 instance=ExtResource("1_m2a6n")]
+position = Vector2(2641, 328)
+
+[node name="Jellyfish53" parent="." unique_id=589727291 instance=ExtResource("1_m2a6n")]
+position = Vector2(2763, 333)
+
+[node name="Jellyfish54" parent="." unique_id=1988191264 instance=ExtResource("1_m2a6n")]
+position = Vector2(2836, 490)
+
+[node name="Jellyfish55" parent="." unique_id=1269174410 instance=ExtResource("1_m2a6n")]
+position = Vector2(2882, 502)
+
+[node name="Jellyfish56" parent="." unique_id=45473183 instance=ExtResource("1_m2a6n")]
+position = Vector2(2828, 327)
+
+[node name="Jellyfish57" parent="." unique_id=538669613 instance=ExtResource("1_m2a6n")]
+position = Vector2(2933, 527)
+
+[node name="Jellyfish74" parent="." unique_id=1949243658 instance=ExtResource("1_m2a6n")]
+position = Vector2(2948, 357)
+
+[node name="Jellyfish75" parent="." unique_id=1382147141 instance=ExtResource("1_m2a6n")]
+position = Vector2(2641, 527)
+
+[node name="Jellyfish77" parent="." unique_id=1125276677 instance=ExtResource("1_m2a6n")]
+position = Vector2(2980, 560)
+
+[node name="Jellyfish78" parent="." unique_id=472655714 instance=ExtResource("1_m2a6n")]
+position = Vector2(3058, 343)
+
+[node name="Jellyfish79" parent="." unique_id=1344700681 instance=ExtResource("1_m2a6n")]
+position = Vector2(3026, 608)
+
+[node name="Jellyfish80" parent="." unique_id=1104351523 instance=ExtResource("1_m2a6n")]
+position = Vector2(3151, 605)
+
+[node name="Jellyfish109" parent="." unique_id=122446060 instance=ExtResource("1_m2a6n")]
+position = Vector2(3085, 610)
+
+[node name="Jellyfish81" parent="." unique_id=537521953 instance=ExtResource("1_m2a6n")]
+position = Vector2(3124, 339)
+
+[node name="Jellyfish82" parent="." unique_id=323268527 instance=ExtResource("1_m2a6n")]
+position = Vector2(3198, 341)
+
+[node name="Jellyfish83" parent="." unique_id=1633167433 instance=ExtResource("1_m2a6n")]
+position = Vector2(3279, 341)
+
+[node name="Jellyfish84" parent="." unique_id=1690924390 instance=ExtResource("1_m2a6n")]
+position = Vector2(3234, 605)
+
+[node name="Jellyfish85" parent="." unique_id=666002690 instance=ExtResource("1_m2a6n")]
+position = Vector2(3321, 603)
+
+[node name="Jellyfish87" parent="." unique_id=1905332051 instance=ExtResource("1_m2a6n")]
+position = Vector2(3381, 605)
+
+[node name="Jellyfish88" parent="." unique_id=476923872 instance=ExtResource("1_m2a6n")]
+position = Vector2(3386, 347)
+
+[node name="Jellyfish89" parent="." unique_id=411312144 instance=ExtResource("1_m2a6n")]
+position = Vector2(3087, 476)
+
+[node name="Jellyfish90" parent="." unique_id=1338932449 instance=ExtResource("1_m2a6n")]
+position = Vector2(3192, 472)
+
+[node name="Jellyfish91" parent="." unique_id=640114490 instance=ExtResource("1_m2a6n")]
+position = Vector2(3287, 472)
+
+[node name="Jellyfish92" parent="." unique_id=1813103165 instance=ExtResource("1_m2a6n")]
+position = Vector2(3387, 476)
+
+[node name="Jellyfish93" parent="." unique_id=756863946 instance=ExtResource("1_m2a6n")]
+position = Vector2(3387, 476)
+
+[node name="Jellyfish76" parent="." unique_id=769615575 instance=ExtResource("1_m2a6n")]
+position = Vector2(3009, 380)
+
+[node name="Jellyfish58" parent="." unique_id=1624996991 instance=ExtResource("1_m2a6n")]
+position = Vector2(2887, 330)
+
+[node name="Jellyfish59" parent="." unique_id=112955394 instance=ExtResource("1_m2a6n")]
+position = Vector2(2558, 368)
+
+[node name="Jellyfish60" parent="." unique_id=1566179399 instance=ExtResource("1_m2a6n")]
+position = Vector2(2382, 444)
+
+[node name="Jellyfish9" parent="." unique_id=2036050640 instance=ExtResource("1_m2a6n")]
+position = Vector2(1947, 552)
+
+[node name="Jellyfish27" parent="." unique_id=1836795100 instance=ExtResource("1_m2a6n")]
+position = Vector2(1988, 536)
+
+[node name="Jellyfish28" parent="." unique_id=650133082 instance=ExtResource("1_m2a6n")]
+position = Vector2(2023, 512)
+
+[node name="Jellyfish31" parent="." unique_id=1930208181 instance=ExtResource("1_m2a6n")]
+position = Vector2(2065, 481)
+
+[node name="Jellyfish32" parent="." unique_id=878469676 instance=ExtResource("1_m2a6n")]
+position = Vector2(2033, 356)
+
+[node name="Jellyfish33" parent="." unique_id=1219085339 instance=ExtResource("1_m2a6n")]
+position = Vector2(2088, 341)
+
+[node name="Jellyfish34" parent="." unique_id=1144076545 instance=ExtResource("1_m2a6n")]
+position = Vector2(2145, 340)
+
+[node name="Jellyfish35" parent="." unique_id=1712255129 instance=ExtResource("1_m2a6n")]
+position = Vector2(2189, 341)
+
+[node name="Jellyfish36" parent="." unique_id=396219135 instance=ExtResource("1_m2a6n")]
+position = Vector2(2110, 465)
+
+[node name="Jellyfish37" parent="." unique_id=1742292883 instance=ExtResource("1_m2a6n")]
+position = Vector2(2147, 459)
+
+[node name="Jellyfish29" parent="." unique_id=1084370494 instance=ExtResource("1_m2a6n")]
+position = Vector2(1983, 382)
+
+[node name="Jellyfish10" parent="." unique_id=1471498687 instance=ExtResource("1_m2a6n")]
+position = Vector2(2298, 613)
+
+[node name="Jellyfish106" parent="." unique_id=1462433330 instance=ExtResource("1_m2a6n")]
+position = Vector2(2441, 618)
+
+[node name="Jellyfish107" parent="." unique_id=1297279706 instance=ExtResource("1_m2a6n")]
+position = Vector2(2349, 614)
+
+[node name="Jellyfish108" parent="." unique_id=1702039968 instance=ExtResource("1_m2a6n")]
+position = Vector2(2394, 619)
+
+[node name="Jellyfish16" parent="." unique_id=199480184 instance=ExtResource("1_m2a6n")]
+position = Vector2(2486, 617)
+
+[node name="Jellyfish110" parent="." unique_id=2057771024 instance=ExtResource("1_m2a6n")]
+position = Vector2(2542, 614)
+
+[node name="Jellyfish111" parent="." unique_id=1566002294 instance=ExtResource("1_m2a6n")]
+position = Vector2(2587, 619)
+
+[node name="Jellyfish46" parent="." unique_id=1585122602 instance=ExtResource("1_m2a6n")]
+position = Vector2(2665, 493)
+
+[node name="Jellyfish72" parent="." unique_id=1048378663 instance=ExtResource("1_m2a6n")]
+position = Vector2(2720, 489)
+
+[node name="Jellyfish48" parent="." unique_id=1274103320 instance=ExtResource("1_m2a6n")]
+position = Vector2(2489, 444)
+
+[node name="Jellyfish49" parent="." unique_id=136746084 instance=ExtResource("1_m2a6n")]
+position = Vector2(2705, 331)
+
+[node name="Jellyfish50" parent="." unique_id=732003425 instance=ExtResource("1_m2a6n")]
+position = Vector2(2533, 410)
+
+[node name="Jellyfish11" parent="." unique_id=996760552 instance=ExtResource("1_m2a6n")]
+position = Vector2(2189, 481)
+
+[node name="Jellyfish38" parent="." unique_id=1141228196 instance=ExtResource("1_m2a6n")]
+position = Vector2(2220, 520)
+
+[node name="Jellyfish39" parent="." unique_id=687037999 instance=ExtResource("1_m2a6n")]
+position = Vector2(2245, 344)
+
+[node name="Jellyfish40" parent="." unique_id=1190233385 instance=ExtResource("1_m2a6n")]
+position = Vector2(2291, 371)
+
+[node name="Jellyfish43" parent="." unique_id=1563902021 instance=ExtResource("1_m2a6n")]
+position = Vector2(2435, 480)
+
+[node name="Jellyfish45" parent="." unique_id=833389731 instance=ExtResource("1_m2a6n")]
+position = Vector2(2608, 568)
+
+[node name="Jellyfish65" parent="." unique_id=1029047908 instance=ExtResource("1_m2a6n")]
+position = Vector2(2252, 560)

@@ -12,8 +12,8 @@
 
 [node name="CharacterBody2D" parent="." unique_id=67976220 groups=["Player"] instance=ExtResource("1_glw66")]
 position = Vector2(266, 537)
-collision_layer = 141
-collision_mask = 141
+collision_layer = 5
+collision_mask = 5
 script = ExtResource("2_apq5t")
 gravity = 100.0
 metadata/is_underwater = true

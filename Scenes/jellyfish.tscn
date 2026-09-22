@@ -4,13 +4,15 @@
 [ext_resource type="Texture2D" uid="uid://030ryhidnfkx" path="res://Sprites/Entities/Jellyfish Sprite Sheet.png" id="1_vhqib"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oltiy"]
-size = Vector2(13, 30)
+size = Vector2(13, 28)
 
 [node name="Area2D" type="Area2D" unique_id=619110400 groups=["Jellyfish"]]
+collision_layer = 128
+collision_mask = 128
 script = ExtResource("1_cvath")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1175322766]
-position = Vector2(-16.5, -11)
+position = Vector2(-16.5, -12)
 shape = SubResource("RectangleShape2D_oltiy")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=920685655]

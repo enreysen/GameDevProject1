@@ -8,7 +8,7 @@ size = Vector2(52.5, 42.1875)
 
 [node name="Area2D" type="Area2D" unique_id=1831972564]
 script = ExtResource("1_b120c")
-move_direction = Vector2(-1000, 0)
+move_direction = Vector2(-20000, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1112135219]
 position = Vector2(1.9455175, 3.0500011)

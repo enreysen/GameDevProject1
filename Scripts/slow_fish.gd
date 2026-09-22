@@ -28,7 +28,6 @@ func _on_body_entered(body: Node2D) -> void:
 			body.slow()
 
 	if body.is_in_group("Wall"):
-		print("wall")
 		wall = true
 		
 func _on_body_exited(body: Node2D) -> void:

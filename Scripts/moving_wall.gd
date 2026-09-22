@@ -11,6 +11,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	position.x += 1
 	if underwater: 
 		camera.zoom = Vector2(2.0, 2.0)
+
+	position.x += 1
