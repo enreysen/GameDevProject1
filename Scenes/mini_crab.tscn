@@ -44,7 +44,10 @@ _data = {
 &"crab_walking": SubResource("Animation_rxqea")
 }
 
-[node name="Mini Crab" type="RigidBody2D" unique_id=743378500]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g5dd7"]
+size = Vector2(24, 13)
+
+[node name="Mini Crab" type="CharacterBody2D" unique_id=857223920]
 script = ExtResource("1_ftsmc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=254103927]
@@ -61,3 +64,12 @@ frame = 5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2046987516]
 libraries/ = SubResource("AnimationLibrary_tfeo4")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=748113300]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=433900708]
+position = Vector2(-4, 10.5)
+shape = SubResource("RectangleShape2D_g5dd7")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

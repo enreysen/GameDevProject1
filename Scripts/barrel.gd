@@ -16,13 +16,15 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		_manage_animation()
 		await $AnimationPlayer.animation_finished
 		queue_free()
-		
-	elif body.is_in_group("Crab"):
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area.is_in_group("Crab"):
 		print("crab")
 		collision.set_deferred("disabled", true)
 		_manage_animation()
 		await $AnimationPlayer.animation_finished
 		queue_free()
+		
 		
 func _manage_animation():
 	anim.play("destroy_barrel")
