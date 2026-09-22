@@ -29,7 +29,9 @@ func _on_body_entered(body: Node2D) -> void:
 	
 	# if projectile hits crab hit box, remove health and remove projectile
 	if body.is_in_group("Projectile"):
+		print("Crab Health:", health.value)
 		if health.value > max_health / 2:
+			print("half health mode")
 			_remove_health()
 		else:
 			position.x -= 5
