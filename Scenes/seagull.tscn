@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://0pbj2w3h2xf2" path="res://Scripts/seagull.gd" id="1_fpxi3"]
 [ext_resource type="Texture2D" uid="uid://d2w5yrs8ki8e8" path="res://Sprites/Entities/seagull_animation.png" id="1_ugw7i"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_g5dd7"]
-size = Vector2(33.5, 19)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fdnlq"]
+size = Vector2(17, 14.75)
 
 [sub_resource type="Animation" id="Animation_fpxi3"]
 length = 0.001
@@ -50,8 +50,8 @@ script = ExtResource("1_fpxi3")
 move_direction = Vector2(-10000, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=557687795]
-position = Vector2(-1.75, -2.5)
-shape = SubResource("RectangleShape2D_g5dd7")
+position = Vector2(-0.5, -0.625)
+shape = SubResource("RectangleShape2D_fdnlq")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2022403215]
 position = Vector2(-1.9999999, 0)

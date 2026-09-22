@@ -103,6 +103,18 @@ collision_mask = 9
 position = Vector2(2141, 526)
 collision_mask = 9
 
+[node name="Seagull17" parent="." unique_id=650116406 groups=["Seagull"] instance=ExtResource("3_lia0d")]
+position = Vector2(3073, 472)
+collision_mask = 9
+
+[node name="Seagull18" parent="." unique_id=1805284459 groups=["Seagull"] instance=ExtResource("3_lia0d")]
+position = Vector2(3272, 462)
+collision_mask = 9
+
+[node name="Seagull19" parent="." unique_id=22757407 groups=["Seagull"] instance=ExtResource("3_lia0d")]
+position = Vector2(3559, 491)
+collision_mask = 9
+
 [node name="Seagull3" parent="." unique_id=349827029 groups=["Seagull"] instance=ExtResource("3_lia0d")]
 position = Vector2(386, 460)
 collision_mask = 9
@@ -147,6 +159,21 @@ z_index = 4
 position = Vector2(1115, -116)
 shape = SubResource("RectangleShape2D_i1act")
 
+[node name="Mini Crab Spawn7" type="Area2D" parent="." unique_id=74463101 groups=["Mini_Crabs"]]
+position = Vector2(868, 527)
+collision_layer = 5
+collision_mask = 5
+
+[node name="Mini Crab Spawn" type="CollisionShape2D" parent="Mini Crab Spawn7" unique_id=475219178 groups=["Mini_Crabs"]]
+z_index = 4
+position = Vector2(2480, -150)
+shape = SubResource("RectangleShape2D_i1act")
+
+[node name="Mini Crab Spawn2" type="CollisionShape2D" parent="Mini Crab Spawn7" unique_id=1883033201 groups=["Mini_Crabs"]]
+z_index = 4
+position = Vector2(2044, -153)
+shape = SubResource("RectangleShape2D_i1act")
+
 [node name="Barrel12" parent="." unique_id=1677749499 instance=ExtResource("3_i1act")]
 position = Vector2(2354, 529)
 
@@ -188,6 +215,30 @@ position = Vector2(2732, 529)
 
 [node name="Barrel26" parent="." unique_id=2065625809 instance=ExtResource("3_i1act")]
 position = Vector2(2732, 499)
+
+[node name="Barrel28" parent="." unique_id=1663336431 instance=ExtResource("3_i1act")]
+position = Vector2(3443, 530)
+
+[node name="Barrel29" parent="." unique_id=746528297 instance=ExtResource("3_i1act")]
+position = Vector2(3135, 529)
+
+[node name="Barrel30" parent="." unique_id=1494096898 instance=ExtResource("3_i1act")]
+position = Vector2(3187, 530)
+
+[node name="Barrel32" parent="." unique_id=247039883 instance=ExtResource("3_i1act")]
+position = Vector2(3185, 499)
+
+[node name="Barrel33" parent="." unique_id=714669402 instance=ExtResource("3_i1act")]
+position = Vector2(3134, 498)
+
+[node name="Barrel34" parent="." unique_id=979809069 instance=ExtResource("3_i1act")]
+position = Vector2(3109, 529)
+
+[node name="Barrel31" parent="." unique_id=1462649702 instance=ExtResource("3_i1act")]
+position = Vector2(3160, 499)
+
+[node name="Barrel35" parent="." unique_id=404539117 instance=ExtResource("3_i1act")]
+position = Vector2(3161, 529)
 
 [node name="Barrel27" parent="." unique_id=161736481 instance=ExtResource("3_i1act")]
 position = Vector2(2592, 530)
