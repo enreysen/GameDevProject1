@@ -38,10 +38,5 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Wall"):
 		wall = true
 
-func _on_body_exited(body: Node2D) -> void:
-	if body.is_in_group("Player"):
-		if body.has_method("unstun"):
-			body.unstun()
-
 func _manage_animation():
 	anim.play("seagull")

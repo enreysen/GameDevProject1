@@ -26,8 +26,8 @@ func _physics_process(delta: float) -> void:
 		velocity.y += gravity * delta
 		
 	if stunned:
-		await get_tree().create_timer(5.0).timeout 
 		move_speed = 0
+
 	else:
 		move_speed = 30
 		
@@ -46,7 +46,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("shoot"):
 		shoot()
 	
-	if Input.is_action_pressed("jump") and is_on_floor():
+	if Input.is_action_pressed("jump") and is_on_floor() and not stunned:
 		velocity.y = -jump_force
 	elif Input.is_action_just_pressed("jump"):
 		velocity.y += -jump_force * .02
@@ -65,6 +65,9 @@ func shoot():
 
 func stun():
 	stunned = true
+	await get_tree().create_timer(2.0).timeout 
+	unstun()
+
 	
 func unstun():
 	stunned = false

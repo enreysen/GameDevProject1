@@ -52,7 +52,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 			body.stun()
 		
 		collision.set_deferred("disabled", true)
-		await get_tree().create_timer(1.0).timeout
+		await get_tree().create_timer(2.0).timeout
 
 		if body.has_method("unstun"):
 			body.unstun()
