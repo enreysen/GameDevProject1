@@ -89,7 +89,7 @@ func _physics_process(delta: float) -> void:
 func shoot():
 	var bullet = bullet_path.instantiate()
 	bullet.direction = rotation
-	bullet.spawn_position = (node_2d.global_position) - Vector2(20, 0)
+	bullet.spawn_position = (node_2d.global_position) - Vector2(30, 0)
 	bullet.rotate = global_rotation
 	get_parent().add_child(bullet)
 
