@@ -9,6 +9,13 @@
 [ext_resource type="PackedScene" uid="uid://6waveewgthtk" path="res://Scenes/ground.tscn" id="5_4ge3q"]
 [ext_resource type="Texture2D" uid="uid://bgx2llbry6l4e" path="res://Sprites/Backgrounds/Underwater Layers/underwater-fantasy-preview.png" id="8_4ge3q"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7iiau"]
+bg_color = Color(0.9882353, 1, 1, 0.7176471)
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2xbik"]
+bg_color = Color(0.34117648, 0.6392157, 1, 0.7411765)
+
 [node name="Level2" type="Node2D" unique_id=1459786945]
 
 [node name="CharacterBody2D" parent="." unique_id=67976220 groups=["Player"] instance=ExtResource("1_glw66")]
@@ -37,7 +44,9 @@ metadata/is_underwater = true
 offset_left = 17.0
 offset_top = -96.0
 offset_right = 93.0
-offset_bottom = -69.0
+offset_bottom = -79.0
+theme_override_styles/background = SubResource("StyleBoxFlat_7iiau")
+theme_override_styles/fill = SubResource("StyleBoxFlat_2xbik")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=1942175832]
 visible = false

@@ -27,6 +27,8 @@ func _ready() -> void:
 	
 	if underwater:
 		speed = 50
+		
+	_manage_animation()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

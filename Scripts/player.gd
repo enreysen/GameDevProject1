@@ -23,14 +23,13 @@ var underwater = false
 func _ready() -> void:
 	if node_2d.has_meta("is_underwater"):
 		underwater = node_2d.get_meta("is_underwater")
+		_manage_animation()
 	
 	if underwater: 
 		air.value = 100
 
-# flip sprite
 func _process(delta: float):
-	if velocity.x != 0:
-		sprite.flip_h = velocity.x > 0
+	pass
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor(): # how fast the player falls
@@ -93,7 +92,6 @@ func shoot():
 	bullet.spawn_position = (node_2d.global_position) - Vector2(20, 0)
 	bullet.rotate = global_rotation
 	get_parent().add_child(bullet)
-	
 
 func stun():
 	stunned = true
@@ -111,3 +109,6 @@ func slow():
 	
 func unslow():
 	slowed = false
+	
+func _manage_animation():
+	anim.play("player_run")
