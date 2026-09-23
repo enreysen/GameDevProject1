@@ -76,9 +76,12 @@ func _physics_process(delta: float) -> void:
 		else: 
 			velocity.y = -jump_force / 4
 		
-	# remove air		
+	# remove air, restart if run out
 	if underwater:
-		air.value -= 0.025
+		if air.value <= 0:
+			get_tree().reload_current_scene()
+		else:
+			air.value -= 0.025
 	
 	move_and_slide()
 
