@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bfnfcolf4vb65" path="res://Scenes/tutorial_1_layout.tscn" id="3_a5wdr"]
 [ext_resource type="Script" uid="uid://u3gu6doouat0" path="res://Scripts/player.gd" id="3_cfwh2"]
 [ext_resource type="PackedScene" uid="uid://c6odshslp0owr" path="res://Scenes/moving_wall.tscn" id="4_a5wdr"]
+[ext_resource type="Script" uid="uid://b8cug2lnls35u" path="res://Scripts/label_1.gd" id="6_2u8qt"]
 [ext_resource type="Script" uid="uid://ch4gqmbbxwjdx" path="res://Scripts/moving_wall.gd" id="6_cwa6x"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cwa6x"]
@@ -40,3 +41,36 @@ offset_right = 93.0
 offset_bottom = -79.0
 theme_override_styles/background = SubResource("StyleBoxFlat_cwa6x")
 theme_override_styles/fill = SubResource("StyleBoxFlat_2u8qt")
+
+[node name="Movement Label" type="Label" parent="." unique_id=305812774]
+offset_left = -59.0
+offset_top = 344.0
+offset_right = 220.0
+offset_bottom = 523.0
+text = "Float up  by holding spacebar
+Move faster with D / right arrow key
+
+"
+script = ExtResource("6_2u8qt")
+
+[node name="Pufferfish Label" type="Label" parent="." unique_id=915257994]
+offset_left = 515.0
+offset_top = 421.0
+offset_right = 811.0
+offset_bottom = 496.0
+text = "Pufferfish give you air"
+horizontal_alignment = 1
+
+[node name="Fish Show Label" type="Label" parent="." unique_id=1953733784]
+offset_left = 267.0
+offset_top = 353.0
+offset_right = 563.0
+offset_bottom = 428.0
+text = "Fish slow you while in water"
+
+[node name="Jellyfish" type="Label" parent="." unique_id=1771593988]
+offset_left = 762.0
+offset_top = 364.0
+offset_right = 1058.0
+offset_bottom = 439.0
+text = "Jellyfish will stun you."

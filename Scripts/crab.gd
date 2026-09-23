@@ -40,13 +40,15 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if not underwater and health.value > max_health / 2:
-			position.x += 0.25
+			position.x += 0.50
 	else: 
 		if not underwater and not tutorial:
 			position.x += 0.50
 		elif underwater and not tutorial:
 			position.x += 0.70
 			global_position.y = player.global_position.y + 15
+		elif tutorial:
+			position.x += 0.50
 		
 	_manage_animation()
 	
@@ -66,9 +68,10 @@ func _on_body_entered(body: Node2D) -> void:
 			elif not tutorial:
 				position.x -= 10
 				_remove_health()
+			elif tutorial:
+				_remove_health()
 		
 		body.queue_free()
-
 
 func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Mini_Crabs"):
