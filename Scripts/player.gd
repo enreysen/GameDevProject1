@@ -3,7 +3,7 @@ extends CharacterBody2D
 @export var move_speed : float = 30
 @export var acceleration : float = 50
 @export var braking : float = 20
-@export var gravity : float = 500
+@export var gravity : float
 @export var jump_force : float = 200
 @export var stunned : bool = false
 
@@ -27,6 +27,9 @@ func _ready() -> void:
 	
 	if underwater: 
 		air.value = 100
+		gravity = 100
+	else:
+		gravity = 500
 
 func _process(delta: float):
 	pass
