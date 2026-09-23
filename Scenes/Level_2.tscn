@@ -21,8 +21,6 @@ metadata/is_underwater = true
 
 [node name="Crab" parent="." unique_id=2141718950 instance=ExtResource("2_vgr4u")]
 position = Vector2(198, 599)
-collision_layer = 1
-collision_mask = 1
 script = ExtResource("4_4ge3q")
 metadata/is_underwater = true
 

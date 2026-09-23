@@ -18,7 +18,6 @@ func _ready() -> void:
 	health.value = max_health
 	if node_2d.has_meta("is_underwater"):
 		underwater = node_2d.get_meta("is_underwater")
-		print(underwater)
 	
 	if not underwater:
 		health.position = Vector2(-125, -164)
@@ -30,7 +29,6 @@ func _process(delta: float) -> void:
 	if not underwater and health.value > max_health / 2:
 			position.x += 0.5
 	else: 
-		print("crab angry")
 		position.x += 0.70
 	
 		if underwater:
@@ -46,7 +44,6 @@ func _on_body_entered(body: Node2D) -> void:
 	
 	# if projectile hits crab hit box, remove health and remove projectile
 	if body.is_in_group("Projectile"):
-		print("Crab Health:", health.value)
 		if health.value > max_health / 2 and not underwater:
 			_remove_health()
 		else:
@@ -66,7 +63,6 @@ func _on_area_entered(area: Area2D) -> void:
 	
 func _remove_health():
 		health.value -= 1
-		print("Crab health: ", health.value)
 	
 func _manage_animation():
 	anim.play("crab_walking")
