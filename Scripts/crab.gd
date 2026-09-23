@@ -7,31 +7,45 @@ extends Area2D
 @onready var player: CharacterBody2D = $"../CharacterBody2D"
 
 var mini_crab = preload("res://Scenes/mini_crab.tscn")
-var max_health : float = 300
+var max_health : float
 var underwater  = false
+var tutorial  = false
 var floor = 550
 var ceiling = 375
 var going_to_ceiling = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	health.value = max_health
 	if node_2d.has_meta("is_underwater"):
 		underwater = node_2d.get_meta("is_underwater")
+		
+	if node_2d.has_meta("is_tutorial"):
+		tutorial = node_2d.get_meta("is_tutorial")
+		
+	if not underwater and not tutorial:
+		max_health = 300
+	elif tutorial:
+		max_health = 50
 	
-	if not underwater:
-		health.position = Vector2(-125, -164)
+	health.max_value = max_health
+	health.value = max_health
+	
+	if not underwater and not tutorial:
+		health.position = Vector2(-125.0, -164.0)
+	elif not underwater and tutorial:
+		health.position = Vector2(-75.0, -170.0)
 	else:
-		health.position = Vector2(-125, -100)
+		health.position = Vector2(-125.0, -100.0)
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if not underwater and health.value > max_health / 2:
-			position.x += 0.5
+			position.x += 0.25
 	else: 
-		position.x += 0.70
-	
-		if underwater:
+		if not underwater and not tutorial:
+			position.x += 0.50
+		elif underwater and not tutorial:
+			position.x += 0.70
 			global_position.y = player.global_position.y + 15
 		
 	_manage_animation()
@@ -47,9 +61,9 @@ func _on_body_entered(body: Node2D) -> void:
 		if health.value > max_health / 2 and not underwater:
 			_remove_health()
 		else:
-			if not underwater:
+			if not underwater and not tutorial:
 				position.x -= 5
-			else:
+			elif not tutorial:
 				position.x -= 10
 				_remove_health()
 		
