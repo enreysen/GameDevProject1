@@ -20,7 +20,7 @@ metadata/is_underwater = false
 
 [node name="Sand Tileset" parent="." unique_id=2097602863 instance=ExtResource("3_ynf5e")]
 
-[node name="Moving Wall" parent="." unique_id=1445278934 groups=["Wall"] instance=ExtResource("4_jjvhh")]
+[node name="Moving Wall" parent="." unique_id=1445278934 instance=ExtResource("4_jjvhh")]
 position = Vector2(390, 420)
 collision_layer = 8
 collision_mask = 8

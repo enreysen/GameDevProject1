@@ -241,35 +241,90 @@ z_index = 4
 position = Vector2(2952, -65)
 shape = SubResource("RectangleShape2D_jjp1w")
 
-[node name="Mini Crab Spawn3" type="CollisionShape2D" parent="Mini Crab Spawn7" unique_id=1032362747 groups=["Mini_Crabs"]]
+[node name="Mini Crab Spawn8" type="Area2D" parent="." unique_id=1714317189 groups=["Mini_Crabs"]]
+position = Vector2(868, 527)
+collision_layer = 5
+collision_mask = 5
+
+[node name="Mini Crab Spawn" type="CollisionShape2D" parent="Mini Crab Spawn8" unique_id=794924486 groups=["Mini_Crabs"]]
 z_index = 4
-position = Vector2(3101, -66)
+position = Vector2(3075, -77)
 shape = SubResource("RectangleShape2D_jjp1w")
 
-[node name="Mini Crab Spawn4" type="CollisionShape2D" parent="Mini Crab Spawn7" unique_id=840856195 groups=["Mini_Crabs"]]
+[node name="Mini Crab Spawn9" type="Area2D" parent="." unique_id=1342695094 groups=["Mini_Crabs"]]
+position = Vector2(868, 527)
+collision_layer = 5
+collision_mask = 5
+
+[node name="Mini Crab Spawn" type="CollisionShape2D" parent="Mini Crab Spawn9" unique_id=2042904002 groups=["Mini_Crabs"]]
 z_index = 4
-position = Vector2(3226, -66)
+position = Vector2(3196, -75)
 shape = SubResource("RectangleShape2D_jjp1w")
 
-[node name="Mini Crab Spawn5" type="CollisionShape2D" parent="Mini Crab Spawn7" unique_id=438252128 groups=["Mini_Crabs"]]
+[node name="Mini Crab Spawn10" type="Area2D" parent="." unique_id=402390093 groups=["Mini_Crabs"]]
+position = Vector2(868, 527)
+collision_layer = 5
+collision_mask = 5
+
+[node name="Mini Crab Spawn" type="CollisionShape2D" parent="Mini Crab Spawn10" unique_id=2002146463 groups=["Mini_Crabs"]]
 z_index = 4
-position = Vector2(3343, -67)
+position = Vector2(3574, -78)
 shape = SubResource("RectangleShape2D_jjp1w")
 
-[node name="Mini Crab Spawn6" type="CollisionShape2D" parent="Mini Crab Spawn7" unique_id=515016125 groups=["Mini_Crabs"]]
+[node name="Mini Crab Spawn11" type="Area2D" parent="." unique_id=994944030 groups=["Mini_Crabs"]]
+position = Vector2(868, 527)
+collision_layer = 5
+collision_mask = 5
+
+[node name="Mini Crab Spawn" type="CollisionShape2D" parent="Mini Crab Spawn11" unique_id=1490326669 groups=["Mini_Crabs"]]
 z_index = 4
-position = Vector2(3479, -69)
+position = Vector2(3482, -82)
 shape = SubResource("RectangleShape2D_jjp1w")
 
-[node name="Mini Crab Spawn7" type="CollisionShape2D" parent="Mini Crab Spawn7" unique_id=2119260860 groups=["Mini_Crabs"]]
+[node name="Mini Crab Spawn12" type="Area2D" parent="." unique_id=1440054756 groups=["Mini_Crabs"]]
+position = Vector2(868, 527)
+collision_layer = 5
+collision_mask = 5
+
+[node name="Mini Crab Spawn" type="CollisionShape2D" parent="Mini Crab Spawn12" unique_id=1357887955 groups=["Mini_Crabs"]]
 z_index = 4
-position = Vector2(3614, -72)
+position = Vector2(3394, -80)
 shape = SubResource("RectangleShape2D_jjp1w")
 
-[node name="Mini Crab Spawn2" type="CollisionShape2D" parent="Mini Crab Spawn7" unique_id=1674244483 groups=["Mini_Crabs"]]
+[node name="Mini Crab Spawn13" type="Area2D" parent="." unique_id=1552873965 groups=["Mini_Crabs"]]
+position = Vector2(868, 527)
+collision_layer = 5
+collision_mask = 5
+
+[node name="Mini Crab Spawn" type="CollisionShape2D" parent="Mini Crab Spawn13" unique_id=1812538774 groups=["Mini_Crabs"]]
 z_index = 4
-position = Vector2(2820, -70)
+position = Vector2(3297, -78)
 shape = SubResource("RectangleShape2D_jjp1w")
+
+[node name="Mini Crab Spawn14" type="Area2D" parent="." unique_id=1300425230 groups=["Mini_Crabs"]]
+position = Vector2(868, 527)
+collision_layer = 5
+collision_mask = 5
+
+[node name="Mini Crab Spawn" type="CollisionShape2D" parent="Mini Crab Spawn14" unique_id=149584141 groups=["Mini_Crabs"]]
+z_index = 4
+position = Vector2(3659, -81)
+shape = SubResource("RectangleShape2D_jjp1w")
+
+[node name="Mini Crab Spawn15" type="Area2D" parent="." unique_id=1346631552 groups=["Mini_Crabs"]]
+position = Vector2(868, 527)
+collision_layer = 5
+collision_mask = 5
+
+[node name="Mini Crab Spawn2" type="CollisionShape2D" parent="Mini Crab Spawn15" unique_id=1696112295 groups=["Mini_Crabs"]]
+z_index = 4
+position = Vector2(3744, -81)
+shape = SubResource("RectangleShape2D_jjp1w")
+
+[node name="Mini Crab Spawn16" type="Area2D" parent="." unique_id=676190690 groups=["Mini_Crabs"]]
+position = Vector2(868, 527)
+collision_layer = 5
+collision_mask = 5
 
 [connection signal="body_entered" from="slow_fish_a_1" to="slow_fish_a_1" method="_on_body_entered"]
 [connection signal="body_entered" from="slow_fish_a_3" to="slow_fish_a_3" method="_on_body_entered"]

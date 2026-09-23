@@ -11,35 +11,47 @@ var direction : float
 var rotate : float
 var spawn_position : Vector2
 var player: Node2D = null
-var random_int = randi_range(1, 3) 
+var main_crab: Area2D = null
+var random_int = randi_range(1, 3)
+var underwater = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("Player")
+	main_crab = get_tree().get_first_node_in_group("Crab")
 	global_position = Vector2(spawn_position.x + 30, spawn_position.y - 30)
 	global_rotation = rotation
+	
+	if main_crab != null and main_crab.has_meta("is_underwater"):
+		underwater = main_crab.get_meta("is_underwater")
+	
+	if underwater:
+		speed = 50
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 	
 func _physics_process(delta: float) -> void:
-	if not is_on_floor():
-		velocity.y += gravity * delta
-	else: 
-		# ranomly jump
-		random_int = randi_range(1, 20) 
+	if not underwater:
+		if not is_on_floor():
+			velocity.y += gravity * delta
+		else: 
+			# ranomly jump
+			random_int = randi_range(1, 20) 
 
-		if random_int == 1:
-			velocity.y -= 200
-		elif random_int == 2:
-			velocity.y -= 300
-		elif random_int == 3:
-			velocity.y -= 400
+			if random_int == 1:
+				velocity.y -= 200
+			elif random_int == 2:
+				velocity.y -= 300
+			elif random_int == 3:
+				velocity.y -= 400
+	else:
+		var direction = global_position.direction_to(player.global_position)
+		global_position += direction * speed * delta
 
-	# walk towards player
-	direction =  player.global_position.x - global_position.x
-	global_position.x += direction * move_speed * delta
+		direction =  player.global_position.x - global_position.x
+		global_position.x += direction * move_speed * delta
 	
 	move_and_slide()
 

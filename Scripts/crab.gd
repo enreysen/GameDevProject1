@@ -72,11 +72,18 @@ func _manage_animation():
 	anim.play("crab_walking")
 	
 func throw_mini_crabs():
-	for i in range(5):
+	for i in range(3):
 		var crab = mini_crab.instantiate()
-		crab.direction = rotation
-		crab.spawn_position = (node_2d.global_position) - Vector2(100 * i, 20*i)
-		crab.rotate = global_rotation
+		
+		# Random direction in a full circle
+		var random_angle = randf_range(0, TAU)
+		crab.move_direction = Vector2.RIGHT.rotated(random_angle)
+		
+		# Spawn at a random distance from crab
+		var random_offset = Vector2.RIGHT.rotated(random_angle) * randf_range(0, 10)
+		crab.spawn_position = node_2d.global_position + random_offset
+		
 		get_parent().add_child(crab)
 		
-		await get_tree().create_timer(1.0).timeout
+		# Randomize spawn timing
+		await get_tree().create_timer(1.5).timeout
