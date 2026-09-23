@@ -6,7 +6,45 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x4txr"]
 size = Vector2(69.125, 44.5)
 
-[node name="Area2D" type="Area2D" unique_id=1784436014]
+[sub_resource type="Animation" id="Animation_ve7of"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_is6rb"]
+resource_name = "slow_fish_3"
+length = 0.8333333
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.20000002, 0.43333334, 0.6666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_g4sq1"]
+_data = {
+&"RESET": SubResource("Animation_ve7of"),
+&"slow_fish_3": SubResource("Animation_is6rb")
+}
+
+[node name="Area2D" type="Area2D" unique_id=1784436014 groups=["slow_fish_3"]]
 script = ExtResource("1_ve7of")
 move_direction = Vector2(-10000, 0)
 
@@ -19,6 +57,9 @@ hframes = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=260380770]
 position = Vector2(-14.5625, -7)
 shape = SubResource("RectangleShape2D_x4txr")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=685365962]
+libraries/ = SubResource("AnimationLibrary_g4sq1")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
