@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://c6nixe4dxbked" path="res://Scenes/player.tscn" id="2_ccwba"]
 [ext_resource type="PackedScene" uid="uid://yv8aumc6p6k2" path="res://Scenes/tutorial_2_layout.tscn" id="3_oja5n"]
-[ext_resource type="Script" uid="uid://u3gu6doouat0" path="res://Scripts/player.gd" id="3_y18cd"]
 [ext_resource type="Script" uid="uid://meg5usovlrq0" path="res://Scripts/crab.gd" id="5_i3duj"]
 [ext_resource type="Texture2D" uid="uid://hf0ajxgn6i20" path="res://Sprites/Entities/Crab Sprite Sheet.png" id="6_i3duj"]
 [ext_resource type="PackedScene" uid="uid://c6odshslp0owr" path="res://Scenes/moving_wall.tscn" id="6_rd2he"]
@@ -80,7 +79,6 @@ _data = {
 position = Vector2(223, -16)
 collision_layer = 141
 collision_mask = 141
-script = ExtResource("3_y18cd")
 metadata/is_underwater = false
 metadata/is_tutorial = true
 

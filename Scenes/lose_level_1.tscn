@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://4w8y5sjt6yok"]
 
 [ext_resource type="Texture2D" uid="uid://hf0ajxgn6i20" path="res://Sprites/Entities/Crab Sprite Sheet.png" id="1_3tpq4"]
-[ext_resource type="Script" uid="uid://drs7756x4bjoc" path="res://Scenes/retry.gd" id="1_ep6t3"]
+[ext_resource type="Script" uid="uid://drs7756x4bjoc" path="res://Scripts/retry.gd" id="1_ep6t3"]
 [ext_resource type="Texture2D" uid="uid://b25hb4vperw5b" path="res://Sprites/Backgrounds/background.png" id="2_emxr1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ep6t3"]
@@ -9,8 +9,6 @@ bg_color = Color(0, 0, 0, 0.6745098)
 
 [node name="LoseLevel1" type="Node2D" unique_id=507745173]
 script = ExtResource("1_ep6t3")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1348867650]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2124891346]
 zoom = Vector2(3, 3)
@@ -39,6 +37,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_ep6t3")
 text = "You lost to the Crab!
 Get the crab's health to at least 50%  to move on!"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="." unique_id=1906788239]
 offset_left = 82.0
@@ -46,5 +45,6 @@ offset_top = -10.0
 offset_right = 163.0
 offset_bottom = 21.0
 text = "Try Again"
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

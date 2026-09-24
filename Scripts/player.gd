@@ -8,9 +8,7 @@ extends CharacterBody2D
 @export var stunned : bool = false
 
 var slowed : bool = false
-
 var bullet_path = preload("res://Scenes/projectile.tscn")
-
 var move_input : float
 
 @onready var sprite : Sprite2D = $Sprite
@@ -25,6 +23,7 @@ var move_animation : String
 var shoot_animation : String
 var stun_animation : String
 var slow_animation : String
+var tutorial = false
 
 var can_shoot = true
 var can_dash = true
@@ -32,6 +31,10 @@ var can_dash = true
 func _ready() -> void:
 	if node_2d.has_meta("is_underwater"):
 		underwater = node_2d.get_meta("is_underwater")
+		
+	if node_2d.has_meta("is_tutorial"):
+		tutorial = node_2d.get_meta("is_tutorial")
+		print(tutorial)
 
 	if not underwater:
 		move_animation = "player_run"
@@ -101,7 +104,10 @@ func _physics_process(delta: float) -> void:
 	# remove air, restart if run out
 	if underwater:
 		if air.value <= 0:
-			get_tree().reload_current_scene()
+			if not tutorial:
+				get_tree().change_scene_to_file("res://Scenes/ran_out_of_breath.tscn")
+			else:
+				get_tree().reload_current_scene()
 		else:
 			air.value -= 0.025
 	

@@ -20,6 +20,7 @@ bg_color = Color(0.34117648, 0.6392157, 1, 0.7411765)
 [node name="CharacterBody2D" parent="." unique_id=60867601 instance=ExtResource("9_8npbe")]
 position = Vector2(257, 529)
 metadata/is_underwater = true
+metadata/is_tutorial = false
 
 [node name="Crab" parent="." unique_id=2141718950 instance=ExtResource("2_vgr4u")]
 position = Vector2(198, 599)

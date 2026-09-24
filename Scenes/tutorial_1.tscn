@@ -23,6 +23,7 @@ size = Vector2(265, 366)
 [node name="Player" parent="." unique_id=60867601 instance=ExtResource("1_2u8qt")]
 position = Vector2(-23, 502)
 metadata/is_underwater = true
+metadata/is_tutorial = true
 
 [node name="TileMapLayer" parent="." unique_id=596549897 instance=ExtResource("3_a5wdr")]
 

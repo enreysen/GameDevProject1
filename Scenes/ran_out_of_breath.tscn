@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://tpai2gft1cnd"]
+
+[ext_resource type="Script" uid="uid://cqcrc57mr03al" path="res://Scripts/ran_out_of_breath.gd" id="1_81lwi"]
+[ext_resource type="Texture2D" uid="uid://hf0ajxgn6i20" path="res://Sprites/Entities/Crab Sprite Sheet.png" id="2_k6hqn"]
+[ext_resource type="Texture2D" uid="uid://bgx2llbry6l4e" path="res://Sprites/Backgrounds/Underwater Layers/underwater-fantasy-preview.png" id="3_tuwv7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_svvxq"]
+bg_color = Color(0, 0, 0, 0.6745098)
+
+[node name="Node2D" type="Node2D" unique_id=879276274]
+script = ExtResource("1_81lwi")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=651209938]
+zoom = Vector2(3, 3)
+
+[node name="CrabSpriteSheet" type="Sprite2D" parent="." unique_id=1756569484]
+position = Vector2(-13, -6)
+scale = Vector2(6.28125, 6.15625)
+texture = ExtResource("2_k6hqn")
+hframes = 4
+vframes = 4
+frame = 13
+
+[node name="Label" type="Label" parent="." unique_id=1779146692]
+offset_left = -185.0
+offset_top = -100.0
+offset_right = 178.0
+offset_bottom = -28.0
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_svvxq")
+text = "
+You ran out of breath!
+"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="." unique_id=1132943592]
+offset_left = 82.0
+offset_top = -10.0
+offset_right = 163.0
+offset_bottom = 21.0
+text = "Try Again"
+metadata/_edit_use_anchors_ = true
+
+[node name="UnderwaterFantasyPreview" type="Sprite2D" parent="." unique_id=520169980]
+z_index = -2
+position = Vector2(87, -10)
+scale = Vector2(1.1113282, 1.3593751)
+texture = ExtResource("3_tuwv7")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
