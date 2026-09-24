@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2kdcwux435b2"
-path="res://.godot/imported/Swim_hurt_moving.png-581b8e309c18235d5d4eee69d7c6a47f.ctex"
+uid="uid://c6yrw7vmis4y1"
+path="res://.godot/imported/graverobber_swim_sheet.png-376462dd3f58dad6f91d1dd55a87f5e4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Player/Swim_hurt_moving.png"
-dest_files=["res://.godot/imported/Swim_hurt_moving.png-581b8e309c18235d5d4eee69d7c6a47f.ctex"]
+source_file="res://Sprites/Player/graverobber_swim_sheet.png"
+dest_files=["res://.godot/imported/graverobber_swim_sheet.png-376462dd3f58dad6f91d1dd55a87f5e4.ctex"]
 
 [params]
 

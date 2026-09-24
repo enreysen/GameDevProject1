@@ -57,8 +57,6 @@ func _process(delta: float) -> void:
 		get_tree().change_scene_to_file("res://scenes/tutorial_to_main.tscn")
 	
 
-
-
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
 		# restart level

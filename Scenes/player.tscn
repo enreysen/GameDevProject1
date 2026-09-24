@@ -54,6 +54,23 @@ tracks/0/keys = {
 "values": [12, 13, 14, 15, 16, 17]
 }
 
+[sub_resource type="Animation" id="Animation_x3wgy"]
+resource_name = "player_shoot"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.099999994, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [54, 55, 56, 57, 58, 59]
+}
+
 [sub_resource type="Animation" id="Animation_vgqql"]
 resource_name = "player_sun"
 length = 0.56666666
@@ -92,11 +109,14 @@ _data = {
 &"RESET": SubResource("Animation_6t5aa"),
 &"player_idle": SubResource("Animation_cvnsp"),
 &"player_run": SubResource("Animation_v0iea"),
+&"player_shoot": SubResource("Animation_x3wgy"),
 &"player_stun": SubResource("Animation_vgqql"),
 &"player_walk": SubResource("Animation_fkybt")
 }
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=67976220]
+collision_layer = 133
+collision_mask = 133
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=1852300113]
 position = Vector2(-3.6250002, -13.875001)

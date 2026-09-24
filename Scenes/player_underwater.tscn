@@ -1,0 +1,115 @@
+[gd_scene format=3 uid="uid://b6jsleywn607v"]
+
+[ext_resource type="Texture2D" uid="uid://c6yrw7vmis4y1" path="res://Sprites/Player/graverobber_swim_sheet.png" id="1_okmq3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tvhqc"]
+size = Vector2(36, 16)
+
+[sub_resource type="Animation" id="Animation_okmq3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [60]
+}
+
+[sub_resource type="Animation" id="Animation_tvhqc"]
+resource_name = "player_swim_shoot"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+
+[sub_resource type="Animation" id="Animation_6vhht"]
+resource_name = "player_swim_slow"
+length = 0.33333334
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [30, 31, 32]
+}
+
+[sub_resource type="Animation" id="Animation_0hrfk"]
+resource_name = "player_swim_straight"
+length = 0.56666666
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.20000002, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [60, 61, 62, 63, 64, 65]
+}
+
+[sub_resource type="Animation" id="Animation_uyk8i"]
+resource_name = "player_swim_stun"
+length = 0.43333334
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.33333334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [24, 25, 26]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6vhht"]
+_data = {
+&"RESET": SubResource("Animation_okmq3"),
+&"player_swim_shoot": SubResource("Animation_tvhqc"),
+&"player_swim_slow": SubResource("Animation_6vhht"),
+&"player_swim_straight": SubResource("Animation_0hrfk"),
+&"player_swim_stun": SubResource("Animation_uyk8i")
+}
+
+[node name="Player" type="CharacterBody2D" unique_id=60867601 groups=["Player"]]
+collision_layer = 133
+collision_mask = 133
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1378931303]
+position = Vector2(-3, 3)
+shape = SubResource("RectangleShape2D_tvhqc")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=18714944]
+texture = ExtResource("1_okmq3")
+hframes = 6
+vframes = 12
+frame = 60
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1734929022]
+libraries/ = SubResource("AnimationLibrary_6vhht")

@@ -19,17 +19,29 @@ var move_input : float
 @onready var air: ProgressBar = $"../Moving Wall/Air Remaining"
 
 var underwater = false
+var move_animation : String
+var shoot_animation : String
+var stun_animation : String
+var slow_animation : String
 
 func _ready() -> void:
 	if node_2d.has_meta("is_underwater"):
 		underwater = node_2d.get_meta("is_underwater")
-		_manage_animation()
-	
-	if underwater: 
+		
+	if not underwater:
+		move_animation = "player_run"
+		shoot_animation = "player_shoot"
+		stun_animation = "player_stun"
+		gravity = 500
+	else:
+		move_animation = "player_swim_straight"
+		shoot_animation = "player_swim_shoot"
+		stun_animation = "player_swim_stun"
+		slow_animation = "player_swim_slow"
 		air.value = 100
 		gravity = 100
-	else:
-		gravity = 500
+		
+	_manage_animation(move_animation)
 
 func _process(delta: float):
 	pass
@@ -64,7 +76,7 @@ func _physics_process(delta: float) -> void:
 			velocity.x = move_speed / 5
 	
 	# shoot projectile
-	if Input.is_action_just_pressed("shoot"):
+	if Input.is_action_just_pressed("shoot") and not stunned:
 		shoot()
 	
 	# jump
@@ -90,28 +102,45 @@ func _physics_process(delta: float) -> void:
 # got this section from the following tutorial:
 # "Simple Shooting system in Godot4 2D | godot tutorial" by GameStick on YouTube
 func shoot():
-	var bullet = bullet_path.instantiate()
-	bullet.direction = rotation
-	bullet.spawn_position = (node_2d.global_position) - Vector2(30, 0)
-	bullet.rotate = global_rotation
-	get_parent().add_child(bullet)
+	sprite.flip_h = true
+	
+	_manage_animation(shoot_animation)
+	
+	await get_tree().create_timer(0.55).timeout 
+	_manage_animation(move_animation)
+	sprite.flip_h = false
+	
+	for i in range(3):
+		var bullet = bullet_path.instantiate()
+		bullet.direction = rotation
+		bullet.spawn_position = (node_2d.global_position) - Vector2(30, 0)
+		bullet.rotate = global_rotation
+		get_parent().add_child(bullet)
+		await get_tree().create_timer(0.2).timeout 
+	
+	
 
 func stun():
+	anim.stop()
 	stunned = true
+	_manage_animation(stun_animation)
 	await get_tree().create_timer(2.0).timeout 
 	unstun()
 
 func unstun():
 	stunned = false
+	_manage_animation(move_animation)
 
 func add_air():
 	air.value += 25
 	
 func slow():
+	_manage_animation(slow_animation)
 	slowed = true
 	
 func unslow():
+	_manage_animation(move_animation)
 	slowed = false
 	
-func _manage_animation():
-	anim.play("player_run")
+func _manage_animation(animation: String):
+	anim.play(animation)
