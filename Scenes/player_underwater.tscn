@@ -116,7 +116,12 @@ frame = 60
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1734929022]
 libraries/ = SubResource("AnimationLibrary_6vhht")
 
-[node name="Timer" type="Timer" parent="." unique_id=72085242]
+[node name="Weapon Timer" type="Timer" parent="." unique_id=72085242]
 one_shot = true
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[node name="Dash Timer" type="Timer" parent="." unique_id=970353710]
+one_shot = true
+
+[connection signal="timeout" from="Weapon Timer" to="." method="_on_weapon_timer_timeout"]
+[connection signal="timeout" from="Weapon Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Dash Timer" to="." method="_on_dash_timer_timeout"]

@@ -134,7 +134,13 @@ shape = SubResource("RectangleShape2D_g5dd7")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1116419942]
 libraries/ = SubResource("AnimationLibrary_cvnsp")
 
-[node name="Timer" type="Timer" parent="." unique_id=1900066916]
+[node name="Weapon Timer" type="Timer" parent="." unique_id=1900066916]
 one_shot = true
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[node name="Dash Timer" type="Timer" parent="." unique_id=602063986]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="timeout" from="Weapon Timer" to="." method="_on_weapon_timer_timeout"]
+[connection signal="timeout" from="Weapon Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Dash Timer" to="." method="_on_dash_timer_timeout"]

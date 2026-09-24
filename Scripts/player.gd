@@ -17,7 +17,8 @@ var move_input : float
 @onready var anim : AnimationPlayer = $AnimationPlayer
 @onready var node_2d: Node2D = $"."
 @onready var air: ProgressBar = $"../Moving Wall/Air Remaining"
-@onready var timer: Timer = $Timer
+@onready var timer: Timer = $"Weapon Timer"
+@onready var dash_timer : Timer = $"Dash Timer"
 
 var underwater = false
 var move_animation : String
@@ -26,6 +27,7 @@ var stun_animation : String
 var slow_animation : String
 
 var can_shoot = true
+var can_dash = true
 
 func _ready() -> void:
 	if node_2d.has_meta("is_underwater"):
@@ -66,10 +68,9 @@ func _physics_process(delta: float) -> void:
 	# idea is player keeps moving forward
 	# they move faster if looking right, slower if looking left
 	if move_input == 1.0:
-		if not slowed:
-			velocity.x = 2 * move_speed
-		else:
-			velocity.x = move_speed / 5
+		if can_dash:
+			dash()
+				
 	elif move_input == -1.0:
 		velocity.x = move_speed * 0.5
 	else:
@@ -148,6 +149,20 @@ func unslow():
 func _manage_animation(animation: String):
 	anim.play(animation)
 
+func dash():
+	can_dash = false
+	if not slowed:
+		for i in range(8):
+			position.x += 5
+			await get_tree().create_timer(0.01).timeout
+			print("forward")
+	else:
+		velocity.x = move_speed / 5
+	
+	dash_timer.start()
 
-func _on_timer_timeout() -> void:
+func _on_weapon_timer_timeout() -> void:
 	can_shoot = true
+
+func _on_dash_timer_timeout() -> void:
+	can_dash = true
