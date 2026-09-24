@@ -46,6 +46,8 @@ _data = {
 }
 
 [node name="Area2D" type="Area2D" unique_id=1831972564 groups=["slow_fish_2"]]
+collision_layer = 8
+collision_mask = 8
 script = ExtResource("1_b120c")
 move_direction = Vector2(-20000, 0)
 

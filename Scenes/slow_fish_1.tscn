@@ -46,6 +46,8 @@ _data = {
 }
 
 [node name="slow_fish_1" type="Area2D" unique_id=2001016602 groups=["slow_fish_1"]]
+collision_layer = 8
+collision_mask = 8
 script = ExtResource("1_r01rm")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1271251541]
