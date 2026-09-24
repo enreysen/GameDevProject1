@@ -17,7 +17,7 @@ func _process(delta: float) -> void:
 		progress_value = $"../Crab/HealthBar".value
 		
 		if progress_value <= crab_max_health / 2 and in_collision:
-			get_tree().change_scene_to_file("res://scenes/Level_2.tscn")
+			get_tree().change_scene_to_file("res://Scenes/level_1_to_2.tscn")
 			
 	if transition.is_in_group("Tutorial") and in_collision:
 		get_tree().change_scene_to_file("res://Scenes/tutorial_1_to_2.tscn")

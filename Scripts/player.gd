@@ -29,10 +29,12 @@ var move_animation : String
 var shoot_animation : String
 var stun_animation : String
 var slow_animation : String
+var jump_animation : String
 var tutorial = false
 
 var can_shoot = true
 var can_dash = true
+var can_jump = true
 
 func _ready() -> void:
 	if node_2d.has_meta("is_underwater"):
@@ -46,6 +48,7 @@ func _ready() -> void:
 		move_animation = "player_run"
 		shoot_animation = "player_shoot"
 		stun_animation = "player_stun"
+		jump_animation = "player_jump"
 		gravity = 500
 		jump_sound = $Jump
 	else:
@@ -101,6 +104,7 @@ func _physics_process(delta: float) -> void:
 			if is_on_floor():
 				velocity.y = -jump_force
 				jump_sound.play()
+				jump_animation_func()
 			elif Input.is_action_just_pressed("jump"):
 				velocity.y += -jump_force * .02
 			
@@ -191,3 +195,9 @@ func _on_weapon_timer_timeout() -> void:
 
 func _on_dash_timer_timeout() -> void:
 	can_dash = true
+	
+	
+func jump_animation_func() -> void:
+	_manage_animation(jump_animation)
+	await get_tree().create_timer(0.5).timeout
+	_manage_animation(move_animation)
