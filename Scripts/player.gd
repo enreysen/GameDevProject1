@@ -42,7 +42,6 @@ func _ready() -> void:
 		stun_animation = "player_stun"
 		gravity = 500
 	else:
-		print("fix tutorial swim")
 		move_animation = "player_swim_straight"
 		shoot_animation = "player_swim_shoot"
 		stun_animation = "player_swim_stun"
