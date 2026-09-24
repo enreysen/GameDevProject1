@@ -2,6 +2,10 @@
 
 [ext_resource type="Script" uid="uid://u3gu6doouat0" path="res://Scripts/player.gd" id="1_0hrfk"]
 [ext_resource type="Texture2D" uid="uid://c6yrw7vmis4y1" path="res://Sprites/Player/graverobber_swim_sheet.png" id="1_okmq3"]
+[ext_resource type="AudioStream" uid="uid://bti444hoelaj1" path="res://Sounds/water_drop_synthetic.wav" id="5_ewrid"]
+[ext_resource type="AudioStream" uid="uid://cx3d3x7x81b1b" path="res://Sounds/shot_muffled.wav" id="5_fy532"]
+[ext_resource type="AudioStream" uid="uid://ju0vl05884ma" path="res://Sounds/whoosh_1.wav" id="5_mo788"]
+[ext_resource type="AudioStream" uid="uid://n2svmjam1vf6" path="res://Sounds/hurt.wav" id="5_uyk8i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tvhqc"]
 size = Vector2(36, 16)
@@ -121,6 +125,20 @@ one_shot = true
 
 [node name="Dash Timer" type="Timer" parent="." unique_id=970353710]
 one_shot = true
+
+[node name="Air" type="AudioStreamPlayer2D" parent="." unique_id=1017603418]
+stream = ExtResource("5_ewrid")
+volume_db = 24.0
+
+[node name="Hurt" type="AudioStreamPlayer2D" parent="." unique_id=1532662651]
+stream = ExtResource("5_uyk8i")
+
+[node name="Underwater Shoot" type="AudioStreamPlayer2D" parent="." unique_id=625178068]
+stream = ExtResource("5_fy532")
+
+[node name="Dash" type="AudioStreamPlayer2D" parent="." unique_id=1437811183]
+stream = ExtResource("5_mo788")
+volume_db = 1.075
 
 [connection signal="timeout" from="Weapon Timer" to="." method="_on_weapon_timer_timeout"]
 [connection signal="timeout" from="Weapon Timer" to="." method="_on_timer_timeout"]

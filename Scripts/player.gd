@@ -17,6 +17,12 @@ var move_input : float
 @onready var air: ProgressBar = $"../Moving Wall/Air Remaining"
 @onready var timer: Timer = $"Weapon Timer"
 @onready var dash_timer : Timer = $"Dash Timer"
+@onready var shoot_sound : AudioStreamPlayer2D = $Shoot
+@onready var jump_sound : AudioStreamPlayer2D
+@onready var air_sound : AudioStreamPlayer2D
+@onready var underwater_shoot : AudioStreamPlayer2D
+@onready var hurt_sound : AudioStreamPlayer2D = $Hurt
+@onready var dash_sound : AudioStreamPlayer2D = $Dash
 
 var underwater = false
 var move_animation : String
@@ -41,6 +47,7 @@ func _ready() -> void:
 		shoot_animation = "player_shoot"
 		stun_animation = "player_stun"
 		gravity = 500
+		jump_sound = $Jump
 	else:
 		move_animation = "player_swim_straight"
 		shoot_animation = "player_swim_shoot"
@@ -48,6 +55,8 @@ func _ready() -> void:
 		slow_animation = "player_swim_slow"
 		air.value = 100
 		gravity = 100
+		air_sound = $Air
+		underwater_shoot = $"Underwater Shoot"
 		
 	_manage_animation(move_animation)
 
@@ -91,11 +100,11 @@ func _physics_process(delta: float) -> void:
 		if not underwater:
 			if is_on_floor():
 				velocity.y = -jump_force
+				jump_sound.play()
 			elif Input.is_action_just_pressed("jump"):
 				velocity.y += -jump_force * .02
 			
 			velocity.x += 20
-
 				
 		else: 
 			velocity.y = -jump_force / 4
@@ -131,9 +140,14 @@ func shoot():
 		bullet.spawn_position = (node_2d.global_position) - Vector2(30, 0)
 		bullet.rotate = global_rotation
 		get_parent().add_child(bullet)
+		if not underwater: 
+			shoot_sound.play()
+		else:
+			underwater_shoot.play()
 		await get_tree().create_timer(0.2).timeout 	
 
 func stun():
+	hurt_sound.play()
 	anim.stop()
 	stunned = true
 	_manage_animation(stun_animation)
@@ -146,8 +160,10 @@ func unstun():
 
 func add_air():
 	air.value += 25
+	air_sound.play()
 	
 func slow():
+	hurt_sound.play()
 	_manage_animation(slow_animation)
 	slowed = true
 	
@@ -159,6 +175,7 @@ func _manage_animation(animation: String):
 	anim.play(animation)
 
 func dash():
+	dash_sound.play()
 	can_dash = false
 	if not slowed:
 		for i in range(8):

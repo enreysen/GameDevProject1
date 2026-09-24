@@ -49,14 +49,14 @@ func _process(delta: float) -> void:
 	
 	# movement speed
 	if not underwater and health.value > max_health / 2:
-			position.x += 0.25
+			position.x += 0.50
 			print("Not underwater, not angry")
 	elif not underwater and not tutorial and health.value <= max_health / 2:
-			position.x += 0.50
+			position.x += 0.70
 			print("angry!")
 
 	elif underwater and not tutorial:
-		position.x += 0.60
+		position.x += 0.70
 		global_position.y = player.global_position.y + 15
 		print("Underwater speed")
 			

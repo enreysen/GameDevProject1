@@ -4,8 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://b4qmusr27i32i" path="res://Sprites/Player/graverobber_animations.png" id="1_v0iea"]
 [ext_resource type="AudioStream" uid="uid://c768jhnavwk4h" path="res://Sounds/slap.wav" id="3_6t5aa"]
 [ext_resource type="AudioStream" uid="uid://dswdf5wb7xwyk" path="res://Sounds/jump_short.wav" id="4_vgqql"]
-[ext_resource type="AudioStream" uid="uid://n2svmjam1vf6" path="res://Sounds/hurt.wav" id="5_fkybt"]
-[ext_resource type="AudioStream" uid="uid://ju0vl05884ma" path="res://Sounds/whoosh_1.wav" id="6_x3wgy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g5dd7"]
 size = Vector2(22.5, 31.5)
@@ -151,13 +149,6 @@ volume_db = -9.52
 
 [node name="Jump" type="AudioStreamPlayer2D" parent="." unique_id=25869283]
 stream = ExtResource("4_vgqql")
-
-[node name="Hurt" type="AudioStreamPlayer2D" parent="." unique_id=564375377]
-stream = ExtResource("5_fkybt")
-
-[node name="Dash" type="AudioStreamPlayer2D" parent="." unique_id=1513085827]
-stream = ExtResource("6_x3wgy")
-volume_db = 1.075
 
 [connection signal="timeout" from="Weapon Timer" to="." method="_on_weapon_timer_timeout"]
 [connection signal="timeout" from="Weapon Timer" to="." method="_on_timer_timeout"]
