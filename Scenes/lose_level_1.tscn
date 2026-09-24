@@ -7,7 +7,7 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ep6t3"]
 bg_color = Color(0, 0, 0, 0.6745098)
 
-[node name="LoseLevel1" type="Node2D" unique_id=507745173]
+[node name="LoseLevel1" type="Node2D" unique_id=507745173 groups=["Level 1"]]
 script = ExtResource("1_ep6t3")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2124891346]

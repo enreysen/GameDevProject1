@@ -1,5 +1,5 @@
 extends Node2D
-@onready var lose : Node2D = $"."
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -11,7 +11,12 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_button_pressed() -> void:
-	if lose.is_in_group("Level 1"): 
-		get_tree().change_scene_to_file("res://Scenes/main.tscn")
-	elif lose.is_in_group("Level 2"):
-		get_tree().change_scene_to_file("res://Scenes/Level_2.tscn")
+	get_tree().change_scene_to_file("res://Scenes/main.tscn")
+
+
+func _on_button_2_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/Level_2.tscn")
+
+
+func _on_button_3_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/tutorial_1.tscn")

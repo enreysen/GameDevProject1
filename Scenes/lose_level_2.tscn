@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://bxf7xemgv0kry"]
+
+[ext_resource type="Texture2D" uid="uid://hf0ajxgn6i20" path="res://Sprites/Entities/Crab Sprite Sheet.png" id="1_qw3x7"]
+[ext_resource type="Texture2D" uid="uid://bgx2llbry6l4e" path="res://Sprites/Backgrounds/Underwater Layers/underwater-fantasy-preview.png" id="2_qw3x7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gtf41"]
+bg_color = Color(0, 0, 0, 0.6745098)
+
+[node name="Node2D" type="Node2D" unique_id=1012267708 groups=["Level 2"]]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=668408152]
+zoom = Vector2(3, 3)
+
+[node name="CrabSpriteSheet" type="Sprite2D" parent="." unique_id=1785173671]
+position = Vector2(-13, -6)
+scale = Vector2(6.28125, 6.15625)
+texture = ExtResource("1_qw3x7")
+hframes = 4
+vframes = 4
+frame = 13
+
+[node name="Label" type="Label" parent="." unique_id=720415492]
+offset_left = -184.0
+offset_top = -82.0
+offset_right = 179.0
+offset_bottom = -27.0
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_gtf41")
+text = "You lost to the Crab!
+Get the crab's health to 0%  to win!"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="." unique_id=98761023]
+offset_left = 82.0
+offset_top = -10.0
+offset_right = 163.0
+offset_bottom = 21.0
+text = "Try Again"
+metadata/_edit_use_anchors_ = true
+
+[node name="UnderwaterFantasyPreview" type="Sprite2D" parent="." unique_id=1160865803]
+z_index = -2
+position = Vector2(235.99998, 8.000001)
+scale = Vector2(1.1575521, 1.3072916)
+texture = ExtResource("2_qw3x7")

@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://ch4gqmbbxwjdx" path="res://Scripts/moving_wall.gd" id="5_2g134"]
 [ext_resource type="PackedScene" uid="uid://6waveewgthtk" path="res://Scenes/ground.tscn" id="5_4ge3q"]
 [ext_resource type="Texture2D" uid="uid://bgx2llbry6l4e" path="res://Sprites/Backgrounds/Underwater Layers/underwater-fantasy-preview.png" id="8_4ge3q"]
+[ext_resource type="Script" uid="uid://cbyk8kg7kigtg" path="res://Scripts/lose_transition.gd" id="8_8npbe"]
 [ext_resource type="PackedScene" uid="uid://b6jsleywn607v" path="res://Scenes/player_underwater.tscn" id="9_8npbe"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7iiau"]
@@ -14,6 +15,12 @@ border_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2xbik"]
 bg_color = Color(0.34117648, 0.6392157, 1, 0.7411765)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g5dd7"]
+size = Vector2(1117.875, 465)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x4txr"]
+size = Vector2(115, 473)
 
 [node name="Level2" type="Node2D" unique_id=1459786945]
 
@@ -56,5 +63,19 @@ position = Vector2(730.00006, 434.00003)
 scale = Vector2(1.7955732, 1.900868)
 texture = ExtResource("8_4ge3q")
 
+[node name="Win" type="Area2D" parent="." unique_id=1831014769]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Win" unique_id=1476559322]
+position = Vector2(4561.0625, 417)
+shape = SubResource("RectangleShape2D_g5dd7")
+
+[node name="Lose Level 2" type="Area2D" parent="." unique_id=1747430894 groups=["Lose Level 2"]]
+script = ExtResource("8_8npbe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lose Level 2" unique_id=1307530737]
+position = Vector2(5179, 414.5)
+shape = SubResource("RectangleShape2D_x4txr")
+
 [connection signal="area_entered" from="Crab" to="Crab" method="_on_area_entered"]
 [connection signal="body_entered" from="Crab" to="Crab" method="_on_body_entered"]
+[connection signal="body_entered" from="Lose Level 2" to="Lose Level 2" method="_on_body_entered"]

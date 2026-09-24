@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://dew4cen2hh362"]
+
+[ext_resource type="Script" uid="uid://bgdj2i0ti1oad" path="res://Scripts/win.gd" id="1_611cj"]
+[ext_resource type="Texture2D" uid="uid://b4qmusr27i32i" path="res://Sprites/Player/graverobber_animations.png" id="2_3mm25"]
+[ext_resource type="Texture2D" uid="uid://b25hb4vperw5b" path="res://Sprites/Backgrounds/background.png" id="2_611cj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g1l0l"]
+bg_color = Color(0, 0, 0, 0.6745098)
+
+[node name="Node2D" type="Node2D" unique_id=126020453]
+script = ExtResource("1_611cj")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1423400671]
+zoom = Vector2(3, 3)
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1286417276]
+z_index = -8
+position = Vector2(-4, -9)
+scale = Vector2(1.265625, 1.3333334)
+texture = ExtResource("2_611cj")
+
+[node name="Label" type="Label" parent="." unique_id=1606797605]
+offset_left = -184.0
+offset_top = -82.0
+offset_right = 179.0
+offset_bottom = -27.0
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_g1l0l")
+text = "You Win!
+You defeated the Crab!"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="." unique_id=1196607935]
+offset_left = 73.0
+offset_top = 9.0
+offset_right = 171.0
+offset_bottom = 40.0
+text = "Play Level 1"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button2" type="Button" parent="." unique_id=1476850634]
+offset_left = 73.0
+offset_top = 55.0
+offset_right = 171.0
+offset_bottom = 86.0
+text = "Play Level 2"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button3" type="Button" parent="." unique_id=1829941624]
+offset_left = -184.0
+offset_top = 12.0
+offset_right = -79.0
+offset_bottom = 43.0
+text = "Play Tutorial"
+metadata/_edit_use_anchors_ = true
+
+[node name="GraverobberAnimations" type="Sprite2D" parent="." unique_id=802372716]
+position = Vector2(18.124998, 34.375)
+scale = Vector2(2.7447915, 2.640625)
+texture = ExtResource("2_3mm25")
+hframes = 6
+vframes = 12
+frame = 56
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
