@@ -20,6 +20,23 @@ tracks/0/keys = {
 "values": [5]
 }
 
+[sub_resource type="Animation" id="Animation_rxpyl"]
+resource_name = "crab_resting"
+length = 1.7333333
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8333333, 1.2666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [8, 9, 10, 11]
+}
+
 [sub_resource type="Animation" id="Animation_rxqea"]
 resource_name = "crab_walking"
 length = 0.56666666
@@ -40,6 +57,7 @@ tracks/0/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_384rs"]
 _data = {
 &"RESET": SubResource("Animation_384rs"),
+&"crab_resting": SubResource("Animation_rxpyl"),
 &"crab_walking": SubResource("Animation_rxqea")
 }
 

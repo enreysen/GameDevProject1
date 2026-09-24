@@ -10,9 +10,9 @@ var mini_crab = preload("res://Scenes/mini_crab.tscn")
 var max_health : float
 var underwater  = false
 var tutorial  = false
-var floor = 550
 var ceiling = 375
 var going_to_ceiling = true
+var animation : String
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -39,6 +39,8 @@ func _ready() -> void:
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	
+	# movement speed
 	if not underwater and health.value > max_health / 2:
 			position.x += 0.50
 	else: 
@@ -49,9 +51,9 @@ func _process(delta: float) -> void:
 			global_position.y = player.global_position.y + 15
 		elif tutorial:
 			position.x += 0.50
-		
-	_manage_animation()
 	
+	_manage_animation("crab_walking")
+
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
@@ -81,8 +83,8 @@ func _on_area_entered(area: Area2D) -> void:
 func _remove_health():
 		health.value -= 1
 	
-func _manage_animation():
-	anim.play("crab_walking")
+func _manage_animation(animation : String):
+	anim.play(animation)
 	
 func throw_mini_crabs():
 	for i in range(3):

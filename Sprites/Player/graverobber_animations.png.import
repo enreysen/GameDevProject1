@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cslqu6c8wmvxh"
-path="res://.godot/imported/GraveRobber_attack1.png-d637a481c6f9e6eece22e7e136ee1d99.ctex"
+uid="uid://b4qmusr27i32i"
+path="res://.godot/imported/graverobber_animations.png-7cde1e5b7703ad02daa4a4b3623188a7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Player/GraveRobber_attack1.png"
-dest_files=["res://.godot/imported/GraveRobber_attack1.png-d637a481c6f9e6eece22e7e136ee1d99.ctex"]
+source_file="res://Sprites/Player/graverobber_animations.png"
+dest_files=["res://.godot/imported/graverobber_animations.png-7cde1e5b7703ad02daa4a4b3623188a7.ctex"]
 
 [params]
 
