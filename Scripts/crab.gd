@@ -79,7 +79,7 @@ func _on_body_entered(body: Node2D) -> void:
 			_remove_health()
 		else:
 			if not underwater and not tutorial: # underwater and not tutorial
-				position.x -= 5 # do not hurt, just push back (in "angry" mode
+				position.x -= 20 # do not hurt, just push back (in "angry" mode
 			elif underwater and not tutorial: # not underwater and not tutorial
 				# push crab back and hurt
 				position.x -= 10
@@ -95,7 +95,7 @@ func _on_area_entered(area: Area2D) -> void:
 		throw_mini_crabs()
 	
 func _remove_health():
-		health.value -= 100
+		health.value -= 1
 	
 func _manage_animation(animation : String):
 	anim.play(animation)

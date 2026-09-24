@@ -18,8 +18,6 @@ func _process(delta: float) -> void:
 		
 		if progress_value <= crab_max_health / 2 and in_collision:
 			get_tree().change_scene_to_file("res://scenes/Level_2.tscn")
-			
-		print("not yet")
 		
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):

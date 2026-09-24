@@ -67,3 +67,4 @@ shape = SubResource("RectangleShape2D_hptm8")
 [connection signal="area_entered" from="Crab" to="Crab" method="_on_area_entered"]
 [connection signal="body_entered" from="Crab" to="Crab" method="_on_body_entered"]
 [connection signal="body_entered" from="Transition" to="Transition" method="_on_body_entered"]
+[connection signal="body_entered" from="Lose Screen" to="Player" method="_on_lose_screen_body_entered"]
