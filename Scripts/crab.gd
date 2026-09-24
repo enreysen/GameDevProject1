@@ -49,15 +49,20 @@ func _process(delta: float) -> void:
 	
 	# movement speed
 	if not underwater and health.value > max_health / 2:
+			position.x += 0.25
+			print("Not underwater, not angry")
+	elif not underwater and not tutorial and health.value < max_health / 2:
 			position.x += 0.50
-	else: 
-		if not underwater and not tutorial:
-			position.x += 0.50
-		elif underwater and not tutorial:
-			position.x += 0.70
-			global_position.y = player.global_position.y + 15
-		elif tutorial:
-			position.x += 0.50
+			print("angry!")
+
+	elif underwater and not tutorial:
+		position.x += 0.70
+		global_position.y = player.global_position.y + 15
+		print("Underwater speed")
+			
+	elif tutorial:
+		print("Tutorial speed")
+		position.x += 0.50
 			
 	if health.value <= 0 and tutorial:
 		get_tree().change_scene_to_file("res://scenes/tutorial_to_main.tscn")

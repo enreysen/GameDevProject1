@@ -90,6 +90,9 @@ func _physics_process(delta: float) -> void:
 				velocity.y = -jump_force
 			elif Input.is_action_just_pressed("jump"):
 				velocity.y += -jump_force * .02
+			
+			velocity.x += 20
+
 				
 		else: 
 			velocity.y = -jump_force / 4
@@ -155,7 +158,6 @@ func dash():
 		for i in range(8):
 			position.x += 5
 			await get_tree().create_timer(0.01).timeout
-			print("forward")
 	else:
 		velocity.x = move_speed / 5
 	
