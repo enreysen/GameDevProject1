@@ -35,12 +35,16 @@ func _ready() -> void:
 	
 	await get_tree().create_timer(1).timeout
 	
-	anim_player.play("player_run")
 	player.flip_h = false
+	anim_player.play("player_run")
+	anim_big.play("crab_walking")
 
 	for i in range(10):
-		player.position.x += 10
+		player.position.x += 20
+		big_crab.position.x += 10
 		await get_tree().create_timer(0.10).timeout
+		
+	get_tree().change_scene_to_file("res://scenes/main.tscn")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

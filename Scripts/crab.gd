@@ -16,6 +16,7 @@ var animation : String
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	_manage_animation("crab_walking")
 	if node_2d.has_meta("is_underwater"):
 		underwater = node_2d.get_meta("is_underwater")
 		
@@ -51,8 +52,11 @@ func _process(delta: float) -> void:
 			global_position.y = player.global_position.y + 15
 		elif tutorial:
 			position.x += 0.50
+			
+	if health.value <= 0 and tutorial:
+		get_tree().change_scene_to_file("res://scenes/tutorial_to_1.tscn")
 	
-	_manage_animation("crab_walking")
+
 
 
 func _on_body_entered(body: Node2D) -> void:
