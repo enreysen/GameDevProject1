@@ -51,7 +51,7 @@ func _process(delta: float) -> void:
 	if not underwater and health.value > max_health / 2:
 			position.x += 0.25
 			print("Not underwater, not angry")
-	elif not underwater and not tutorial and health.value < max_health / 2:
+	elif not underwater and not tutorial and health.value <= max_health / 2:
 			position.x += 0.50
 			print("angry!")
 
@@ -79,13 +79,13 @@ func _on_body_entered(body: Node2D) -> void:
 			_remove_health()
 		else:
 			if not underwater and not tutorial: # underwater and not tutorial
-				_remove_health()
-				position.x -= 5
+				position.x -= 5 # do not hurt, just push back (in "angry" mode
 			elif underwater and not tutorial: # not underwater and not tutorial
+				# push crab back and hurt
 				position.x -= 10
 				_remove_health()
-			elif tutorial: # tutorial
-				_remove_health()
+			elif tutorial: # tutorial crab just remove health
+				_remove_health()		
 		
 		body.queue_free()
 
@@ -95,7 +95,7 @@ func _on_area_entered(area: Area2D) -> void:
 		throw_mini_crabs()
 	
 func _remove_health():
-		health.value -= 1
+		health.value -= 100
 	
 func _manage_animation(animation : String):
 	anim.play(animation)

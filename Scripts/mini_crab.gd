@@ -39,21 +39,22 @@ func _physics_process(delta: float) -> void:
 		if not is_on_floor():
 			velocity.y += gravity * delta
 		else: 
-			# ranomly jump
+			# randomly jump
 			random_int = randi_range(1, 20) 
-
 			if random_int == 1:
 				velocity.y -= 200
 			elif random_int == 2:
 				velocity.y -= 300
 			elif random_int == 3:
 				velocity.y -= 400
+		
+		# move toward player x
+		direction =  player.global_position.x - global_position.x
+		global_position.x += direction * move_speed * delta
+		
 	else:
 		var direction = global_position.direction_to(player.global_position)
 		global_position += direction * speed * delta
-
-		direction =  player.global_position.x - global_position.x
-		global_position.x += direction * move_speed * delta
 	
 	move_and_slide()
 

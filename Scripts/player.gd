@@ -32,13 +32,14 @@ var can_dash = true
 func _ready() -> void:
 	if node_2d.has_meta("is_underwater"):
 		underwater = node_2d.get_meta("is_underwater")
-		
+
 	if not underwater:
 		move_animation = "player_run"
 		shoot_animation = "player_shoot"
 		stun_animation = "player_stun"
 		gravity = 500
 	else:
+		print("fix tutorial swim")
 		move_animation = "player_swim_straight"
 		shoot_animation = "player_swim_shoot"
 		stun_animation = "player_swim_stun"

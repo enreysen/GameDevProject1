@@ -2,11 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://c6nixe4dxbked" path="res://Scenes/player.tscn" id="2_fr34y"]
 [ext_resource type="PackedScene" uid="uid://bfnfcolf4vb65" path="res://Scenes/tutorial_1_layout.tscn" id="3_a5wdr"]
-[ext_resource type="Script" uid="uid://u3gu6doouat0" path="res://Scripts/player.gd" id="3_cfwh2"]
 [ext_resource type="PackedScene" uid="uid://c6odshslp0owr" path="res://Scenes/moving_wall.tscn" id="4_a5wdr"]
 [ext_resource type="Script" uid="uid://b8cug2lnls35u" path="res://Scripts/label_1.gd" id="6_2u8qt"]
 [ext_resource type="Script" uid="uid://ch4gqmbbxwjdx" path="res://Scripts/moving_wall.gd" id="6_cwa6x"]
 [ext_resource type="Texture2D" uid="uid://hf0ajxgn6i20" path="res://Sprites/Entities/Crab Sprite Sheet.png" id="7_2u8qt"]
+[ext_resource type="Script" uid="uid://c8plxtqghoiwj" path="res://Scripts/transition.gd" id="7_7is31"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cwa6x"]
 bg_color = Color(0.9882353, 1, 1, 0.7176471)
@@ -15,13 +15,15 @@ border_color = Color(0, 0, 0, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2u8qt"]
 bg_color = Color(0.34117648, 0.6392157, 1, 0.7411765)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tat52"]
+size = Vector2(265, 366)
+
 [node name="Node2D" type="Node2D" unique_id=1360994126]
 
 [node name="Player" parent="." unique_id=67976220 groups=["Player"] instance=ExtResource("2_fr34y")]
 position = Vector2(-83, 518)
 collision_layer = 141
 collision_mask = 141
-script = ExtResource("3_cfwh2")
 metadata/is_underwater = true
 metadata/is_tutorial = true
 
@@ -83,3 +85,12 @@ texture = ExtResource("7_2u8qt")
 hframes = 4
 vframes = 4
 frame = 9
+
+[node name="Transition" type="Area2D" parent="." unique_id=743133572 groups=["Tutorial"]]
+script = ExtResource("7_7is31")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Transition" unique_id=633215837]
+position = Vector2(1492.5, 456)
+shape = SubResource("RectangleShape2D_tat52")
+
+[connection signal="body_entered" from="Transition" to="Transition" method="_on_body_entered"]
