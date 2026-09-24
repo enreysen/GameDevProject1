@@ -19,8 +19,9 @@ func _process(delta: float) -> void:
 		if progress_value <= crab_max_health / 2 and in_collision:
 			get_tree().change_scene_to_file("res://scenes/Level_2.tscn")
 			
-	# iff in lose screen
-	# transition to lose screen
+	if transition.is_in_group("Tutorial") and in_collision:
+		get_tree().change_scene_to_file("res://Scenes/tutorial_1_to_2.tscn")
+			
 		
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):

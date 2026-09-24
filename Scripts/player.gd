@@ -71,7 +71,7 @@ func _physics_process(delta: float) -> void:
 	# idea is player keeps moving forward
 	# they move faster if looking right, slower if looking left
 	if move_input == 1.0:
-		if can_dash:
+		if can_dash and not stunned:
 			dash()
 				
 	elif move_input == -1.0:
