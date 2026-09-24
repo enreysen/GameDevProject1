@@ -56,13 +56,13 @@ func _process(delta: float) -> void:
 			print("angry!")
 
 	elif underwater and not tutorial:
-		position.x += 0.70
+		position.x += 0.60
 		global_position.y = player.global_position.y + 15
 		print("Underwater speed")
 			
-	elif tutorial:
+	elif not underwater and tutorial:
 		print("Tutorial speed")
-		position.x += 0.50
+		position.x += 0.25
 			
 	if health.value <= 0 and tutorial:
 		get_tree().change_scene_to_file("res://scenes/tutorial_to_main.tscn")
@@ -82,7 +82,7 @@ func _on_body_entered(body: Node2D) -> void:
 				position.x -= 20 # do not hurt, just push back (in "angry" mode
 			elif underwater and not tutorial: # not underwater and not tutorial
 				# push crab back and hurt
-				position.x -= 10
+				position.x -= 30
 				_remove_health()
 			elif tutorial: # tutorial crab just remove health
 				_remove_health()		

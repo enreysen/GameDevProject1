@@ -169,6 +169,3 @@ func _on_weapon_timer_timeout() -> void:
 
 func _on_dash_timer_timeout() -> void:
 	can_dash = true
-
-func _on_lose_screen_body_entered(body: Node2D) -> void:
-	pass # Replace with function body.

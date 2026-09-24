@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://0ebricgc3jgs"]
 
-[ext_resource type="PackedScene" uid="uid://c6nixe4dxbked" path="res://Scenes/player.tscn" id="2_fr34y"]
+[ext_resource type="PackedScene" uid="uid://b6jsleywn607v" path="res://Scenes/player_underwater.tscn" id="1_2u8qt"]
 [ext_resource type="PackedScene" uid="uid://bfnfcolf4vb65" path="res://Scenes/tutorial_1_layout.tscn" id="3_a5wdr"]
 [ext_resource type="PackedScene" uid="uid://c6odshslp0owr" path="res://Scenes/moving_wall.tscn" id="4_a5wdr"]
 [ext_resource type="Script" uid="uid://b8cug2lnls35u" path="res://Scripts/label_1.gd" id="6_2u8qt"]
@@ -20,12 +20,9 @@ size = Vector2(265, 366)
 
 [node name="Node2D" type="Node2D" unique_id=1360994126]
 
-[node name="Player" parent="." unique_id=67976220 groups=["Player"] instance=ExtResource("2_fr34y")]
-position = Vector2(-83, 518)
-collision_layer = 141
-collision_mask = 141
+[node name="Player" parent="." unique_id=60867601 instance=ExtResource("1_2u8qt")]
+position = Vector2(-23, 502)
 metadata/is_underwater = true
-metadata/is_tutorial = true
 
 [node name="TileMapLayer" parent="." unique_id=596549897 instance=ExtResource("3_a5wdr")]
 
@@ -51,7 +48,7 @@ offset_top = 344.0
 offset_right = 220.0
 offset_bottom = 523.0
 text = "Float up  by holding spacebar
-Move faster with D / right arrow key
+Dash forward with D / right arrow key
 
 "
 script = ExtResource("6_2u8qt")

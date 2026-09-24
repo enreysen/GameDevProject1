@@ -115,6 +115,14 @@ collision_mask = 9
 position = Vector2(3562, 491)
 collision_mask = 9
 
+[node name="Seagull20" parent="." unique_id=707746184 groups=["Seagull"] instance=ExtResource("3_lia0d")]
+position = Vector2(3963, 529)
+collision_mask = 9
+
+[node name="Seagull21" parent="." unique_id=1229590883 groups=["Seagull"] instance=ExtResource("3_lia0d")]
+position = Vector2(4142, 493)
+collision_mask = 9
+
 [node name="Mini Crab Spawn" type="Area2D" parent="." unique_id=1990845964 groups=["Mini_Crabs"]]
 position = Vector2(871, 527)
 collision_layer = 5
@@ -222,6 +230,12 @@ position = Vector2(2772, 499)
 
 [node name="Barrel28" parent="." unique_id=1663336431 instance=ExtResource("3_i1act")]
 position = Vector2(3443, 530)
+
+[node name="Barrel38" parent="." unique_id=1439548184 instance=ExtResource("3_i1act")]
+position = Vector2(3734, 526)
+
+[node name="Barrel39" parent="." unique_id=1347128634 instance=ExtResource("3_i1act")]
+position = Vector2(3802, 527)
 
 [node name="Barrel29" parent="." unique_id=746528297 instance=ExtResource("3_i1act")]
 position = Vector2(3135, 529)
