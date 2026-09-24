@@ -25,11 +25,17 @@ func _ready() -> void:
 		
 	if not underwater and not tutorial:
 		max_health = 300
+	elif underwater and not tutorial:
+		max_health = 300
 	elif tutorial:
 		max_health = 50
 	
 	health.max_value = max_health
-	health.value = max_health
+	
+	if not underwater or tutorial:
+		health.value = max_health
+	else:
+		health.value = max_health / 2
 	
 	if not underwater and not tutorial:
 		health.position = Vector2(-125.0, -164.0)
@@ -67,12 +73,13 @@ func _on_body_entered(body: Node2D) -> void:
 		if health.value > max_health / 2 and not underwater:
 			_remove_health()
 		else:
-			if not underwater and not tutorial:
+			if not underwater and not tutorial: # underwater and not tutorial
+				_remove_health()
 				position.x -= 5
-			elif not tutorial:
+			elif underwater and not tutorial: # not underwater and not tutorial
 				position.x -= 10
 				_remove_health()
-			elif tutorial:
+			elif tutorial: # tutorial
 				_remove_health()
 		
 		body.queue_free()
