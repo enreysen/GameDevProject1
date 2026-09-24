@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c6odshslp0owr" path="res://Scenes/moving_wall.tscn" id="4_a5wdr"]
 [ext_resource type="Script" uid="uid://b8cug2lnls35u" path="res://Scripts/label_1.gd" id="6_2u8qt"]
 [ext_resource type="Script" uid="uid://ch4gqmbbxwjdx" path="res://Scripts/moving_wall.gd" id="6_cwa6x"]
+[ext_resource type="Texture2D" uid="uid://hf0ajxgn6i20" path="res://Sprites/Entities/Crab Sprite Sheet.png" id="7_2u8qt"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cwa6x"]
 bg_color = Color(0.9882353, 1, 1, 0.7176471)
@@ -74,3 +75,11 @@ offset_top = 364.0
 offset_right = 1058.0
 offset_bottom = 439.0
 text = "Jellyfish will stun you."
+
+[node name="CrabSpriteSheet" type="Sprite2D" parent="." unique_id=1503495479]
+position = Vector2(727.00006, 535)
+scale = Vector2(3.25, 3.40625)
+texture = ExtResource("7_2u8qt")
+hframes = 4
+vframes = 4
+frame = 9

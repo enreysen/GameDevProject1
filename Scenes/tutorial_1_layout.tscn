@@ -2,6 +2,7 @@
 
 [ext_resource type="TileSet" uid="uid://cnads75okjq5l" path="res://Sprites/Tiles/underwater_tiles.tres" id="1_hgd2e"]
 [ext_resource type="Texture2D" uid="uid://bgx2llbry6l4e" path="res://Sprites/Backgrounds/Underwater Layers/underwater-fantasy-preview.png" id="2_jtruq"]
+[ext_resource type="Script" uid="uid://c8plxtqghoiwj" path="res://Scripts/transition.gd" id="2_py6yh"]
 [ext_resource type="Script" uid="uid://ch4gqmbbxwjdx" path="res://Scripts/moving_wall.gd" id="3_2g7vp"]
 [ext_resource type="PackedScene" uid="uid://dhcm7rooksy3u" path="res://Scenes/jellyfish.tscn" id="4_2g7vp"]
 [ext_resource type="PackedScene" uid="uid://bk7uj8nbh54ng" path="res://Scenes/slow_fish_2.tscn" id="5_hsw6l"]
@@ -13,7 +14,7 @@
 size = Vector2(1866, 63)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6w2nx"]
-size = Vector2(321.25, 366)
+size = Vector2(265, 366)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_32n0a"]
 size = Vector2(44, 735)
@@ -33,10 +34,11 @@ tile_set = ExtResource("1_hgd2e")
 position = Vector2(669, 310)
 shape = SubResource("RectangleShape2D_hsw6l")
 
-[node name="Transition" type="StaticBody2D" parent="." unique_id=749526621]
+[node name="Transition" type="Area2D" parent="." unique_id=394247319]
+script = ExtResource("2_py6yh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Transition" unique_id=701318900]
-position = Vector2(1464.375, 456)
+position = Vector2(1492.5, 456)
 shape = SubResource("RectangleShape2D_6w2nx")
 
 [node name="Background1" type="Sprite2D" parent="." unique_id=1233811281]
@@ -97,6 +99,7 @@ position = Vector2(1323, 382)
 [node name="slow_fish_c8" parent="." unique_id=1263226143 instance=ExtResource("8_ukysl")]
 position = Vector2(1206, 579)
 
+[connection signal="body_entered" from="Transition" to="Transition" method="_on_body_entered"]
 [connection signal="body_entered" from="slow_fish_a_15" to="slow_fish_a_15" method="_on_body_entered"]
 [connection signal="body_entered" from="slow_fish_a_16" to="slow_fish_a_16" method="_on_body_entered"]
 [connection signal="body_entered" from="slow_fish_a_17" to="slow_fish_a_17" method="_on_body_entered"]

@@ -54,7 +54,7 @@ func _process(delta: float) -> void:
 			position.x += 0.50
 			
 	if health.value <= 0 and tutorial:
-		get_tree().change_scene_to_file("res://scenes/tutorial_to_1.tscn")
+		get_tree().change_scene_to_file("res://scenes/tutorial_to_main.tscn")
 	
 
 
