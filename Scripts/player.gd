@@ -17,12 +17,15 @@ var move_input : float
 @onready var anim : AnimationPlayer = $AnimationPlayer
 @onready var node_2d: Node2D = $"."
 @onready var air: ProgressBar = $"../Moving Wall/Air Remaining"
+@onready var timer: Timer = $Timer
 
 var underwater = false
 var move_animation : String
 var shoot_animation : String
 var stun_animation : String
 var slow_animation : String
+
+var can_shoot = true
 
 func _ready() -> void:
 	if node_2d.has_meta("is_underwater"):
@@ -76,7 +79,7 @@ func _physics_process(delta: float) -> void:
 			velocity.x = move_speed / 5
 	
 	# shoot projectile
-	if Input.is_action_just_pressed("shoot") and not stunned:
+	if Input.is_action_just_pressed("shoot") and not stunned and can_shoot:
 		shoot()
 	
 	# jump
@@ -102,6 +105,8 @@ func _physics_process(delta: float) -> void:
 # got this section from the following tutorial:
 # "Simple Shooting system in Godot4 2D | godot tutorial" by GameStick on YouTube
 func shoot():
+	can_shoot = false
+	timer.start()
 	sprite.flip_h = true
 	
 	_manage_animation(shoot_animation)
@@ -116,9 +121,7 @@ func shoot():
 		bullet.spawn_position = (node_2d.global_position) - Vector2(30, 0)
 		bullet.rotate = global_rotation
 		get_parent().add_child(bullet)
-		await get_tree().create_timer(0.2).timeout 
-	
-	
+		await get_tree().create_timer(0.2).timeout 	
 
 func stun():
 	anim.stop()
@@ -144,3 +147,7 @@ func unslow():
 	
 func _manage_animation(animation: String):
 	anim.play(animation)
+
+
+func _on_timer_timeout() -> void:
+	can_shoot = true

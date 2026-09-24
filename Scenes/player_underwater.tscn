@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://b6jsleywn607v"]
 
+[ext_resource type="Script" uid="uid://u3gu6doouat0" path="res://Scripts/player.gd" id="1_0hrfk"]
 [ext_resource type="Texture2D" uid="uid://c6yrw7vmis4y1" path="res://Sprites/Player/graverobber_swim_sheet.png" id="1_okmq3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tvhqc"]
@@ -97,9 +98,10 @@ _data = {
 &"player_swim_stun": SubResource("Animation_uyk8i")
 }
 
-[node name="Player" type="CharacterBody2D" unique_id=60867601 groups=["Player"]]
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=60867601 groups=["Player"]]
 collision_layer = 133
 collision_mask = 133
+script = ExtResource("1_0hrfk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1378931303]
 position = Vector2(-3, 3)
@@ -113,3 +115,8 @@ frame = 60
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1734929022]
 libraries/ = SubResource("AnimationLibrary_6vhht")
+
+[node name="Timer" type="Timer" parent="." unique_id=72085242]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

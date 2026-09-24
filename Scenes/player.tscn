@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://c6nixe4dxbked"]
 
+[ext_resource type="Script" uid="uid://u3gu6doouat0" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://b4qmusr27i32i" path="res://Sprites/Player/graverobber_animations.png" id="1_v0iea"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g5dd7"]
@@ -117,6 +118,7 @@ _data = {
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=67976220]
 collision_layer = 133
 collision_mask = 133
+script = ExtResource("1_cvnsp")
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=1852300113]
 position = Vector2(-3.6250002, -13.875001)
@@ -131,3 +133,8 @@ shape = SubResource("RectangleShape2D_g5dd7")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1116419942]
 libraries/ = SubResource("AnimationLibrary_cvnsp")
+
+[node name="Timer" type="Timer" parent="." unique_id=1900066916]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
