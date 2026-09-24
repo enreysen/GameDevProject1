@@ -44,6 +44,10 @@ func _ready() -> void:
 		big_crab.position.x += 10
 		await get_tree().create_timer(0.10).timeout
 		
+	for i in range(20):
+		big_crab.position.x += 10
+		await get_tree().create_timer(0.10).timeout
+		
 	get_tree().change_scene_to_file("res://scenes/main.tscn")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
