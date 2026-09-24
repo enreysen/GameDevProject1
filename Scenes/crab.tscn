@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://putqfo33qovd"]
 
 [ext_resource type="Texture2D" uid="uid://hf0ajxgn6i20" path="res://Sprites/Entities/Crab Sprite Sheet.png" id="1_rxqea"]
+[ext_resource type="AudioStream" uid="uid://bbu5t8x6si8fh" path="res://Sounds/punch.wav" id="2_384rs"]
+[ext_resource type="AudioStream" uid="uid://7pyxx2akobm" path="res://Sounds/air_burst.wav" id="3_rxpyl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rxqea"]
 size = Vector2(113, 53)
@@ -86,3 +88,9 @@ offset_top = -164.0
 offset_right = -39.0
 offset_bottom = -137.0
 max_value = 300.0
+
+[node name="Crab Hurt" type="AudioStreamPlayer2D" parent="." unique_id=75888857]
+stream = ExtResource("2_384rs")
+
+[node name="Mini Crab" type="AudioStreamPlayer2D" parent="." unique_id=272341310]
+stream = ExtResource("3_rxpyl")

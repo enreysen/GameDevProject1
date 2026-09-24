@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://ch4gqmbbxwjdx" path="res://Scripts/moving_wall.gd" id="6_cwa6x"]
 [ext_resource type="Texture2D" uid="uid://hf0ajxgn6i20" path="res://Sprites/Entities/Crab Sprite Sheet.png" id="7_2u8qt"]
 [ext_resource type="Script" uid="uid://c8plxtqghoiwj" path="res://Scripts/transition.gd" id="7_7is31"]
+[ext_resource type="AudioStream" uid="uid://koen3lqsgh1m" path="res://Sounds/Temple in the A b y s s.mp3" id="8_7is31"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cwa6x"]
 bg_color = Color(0.9882353, 1, 1, 0.7176471)
@@ -96,5 +97,10 @@ script = ExtResource("7_7is31")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Transition" unique_id=633215837]
 position = Vector2(1492.5, 456)
 shape = SubResource("RectangleShape2D_tat52")
+
+[node name="Background Music" type="AudioStreamPlayer2D" parent="." unique_id=412430079]
+stream = ExtResource("8_7is31")
+autoplay = true
+parameters/looping = true
 
 [connection signal="body_entered" from="Transition" to="Transition" method="_on_body_entered"]

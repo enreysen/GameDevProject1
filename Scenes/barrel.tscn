@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://drfus6n0763wq" path="res://Sprites/Entities/object_barrel_light.png" id="1_3w4xy"]
 [ext_resource type="Script" uid="uid://c3n3uwram8hyw" path="res://Scripts/barrel.gd" id="1_m5w3l"]
+[ext_resource type="AudioStream" uid="uid://dgw0ysbc80bx5" path="res://Sounds/explosion_small.wav" id="3_rp70x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g5dd7"]
 size = Vector2(24, 27.5)
@@ -68,6 +69,10 @@ shape = SubResource("RectangleShape2D_m5w3l")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2069949080]
 libraries/ = SubResource("AnimationLibrary_1tdys")
+
+[node name="Explosion" type="AudioStreamPlayer2D" parent="." unique_id=1735622326]
+stream = ExtResource("3_rp70x")
+volume_db = -2.683
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

@@ -2,7 +2,7 @@ extends Area2D
 
 @export var move_direction: Vector2
 @export var move_speed : float = 50
-
+@onready var disappear : AudioStreamPlayer2D = $Disappear
 @onready var start_pos : Vector2 = global_position
 @onready var target_pos : Vector2 = global_position + move_direction
 @onready var sprite : Sprite2D = $Sprite2D
@@ -35,6 +35,7 @@ func _on_body_entered(body: Node2D) -> void:
 		
 	if body.is_in_group("Projectile"):
 		body.queue_free()
+		disappear.play()
 		queue_free()
 		
 func _on_body_exited(body: Node2D) -> void:

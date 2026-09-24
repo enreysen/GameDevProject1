@@ -1,5 +1,6 @@
 extends Node
 @onready var anim : AnimationPlayer = $AnimationPlayer
+@onready var disappear : AudioStreamPlayer2D = $Disappear
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -18,6 +19,7 @@ func _on_body_entered(body: Node2D) -> void:
 	
 	if body.is_in_group("Projectile"):
 		body.queue_free()
+		disappear.play()
 		queue_free()
 
 func _on_area_entered(area: Area2D) -> void:

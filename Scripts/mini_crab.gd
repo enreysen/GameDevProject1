@@ -5,6 +5,7 @@ extends CharacterBody2D
 @export var gravity : float = 500
 @onready var anim : AnimationPlayer = $AnimationPlayer
 @onready var collision : CollisionShape2D = $Area2D/CollisionShape2D
+@onready var disappear : AudioStreamPlayer2D = $Disappear
 
 var speed = 100
 var direction : float
@@ -71,11 +72,12 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 		if body.has_method("unstun"):
 			body.unstun()
-			
+		
 		queue_free()
 
 	elif body.is_in_group("Projectile"): # remove mini crab after it hits projectile
 		body.queue_free()
+		disappear.play()
 		queue_free()
 	else:
 		print(body.get_groups())

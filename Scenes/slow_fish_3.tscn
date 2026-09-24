@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://7e4xyuxppumw" path="res://Scripts/slow_fish.gd" id="1_ve7of"]
 [ext_resource type="Texture2D" uid="uid://cx1dqopqme3w1" path="res://Sprites/Entities/fish-big.png" id="1_yvvod"]
+[ext_resource type="AudioStream" uid="uid://e67ualw7bk6w" path="res://Sounds/kick.wav" id="3_is6rb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x4txr"]
 size = Vector2(69.125, 44.5)
@@ -60,6 +61,9 @@ shape = SubResource("RectangleShape2D_x4txr")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=685365962]
 libraries/ = SubResource("AnimationLibrary_g4sq1")
+
+[node name="Disappear" type="AudioStreamPlayer2D" parent="." unique_id=1710399854]
+stream = ExtResource("3_is6rb")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

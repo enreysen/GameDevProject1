@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://b25hb4vperw5b" path="res://Sprites/Backgrounds/background.png" id="2_6b576"]
 [ext_resource type="PackedScene" uid="uid://c6nixe4dxbked" path="res://Scenes/player.tscn" id="3_qs3gg"]
 [ext_resource type="Texture2D" uid="uid://hf0ajxgn6i20" path="res://Sprites/Entities/Crab Sprite Sheet.png" id="5_a4nmj"]
+[ext_resource type="AudioStream" uid="uid://dgdrd1uxc1pj8" path="res://Sounds/BEACHY.mp3" id="6_6femw"]
 
 [sub_resource type="Animation" id="Animation_384rs"]
 length = 0.001
@@ -126,3 +127,8 @@ offset_right = 342.0
 offset_bottom = -92.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_a4nmj")
 text = "  Run!  "
+
+[node name="Background Music" type="AudioStreamPlayer2D" parent="." unique_id=139291945]
+stream = ExtResource("6_6femw")
+autoplay = true
+parameters/looping = true

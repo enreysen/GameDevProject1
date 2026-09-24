@@ -5,6 +5,8 @@ extends Area2D
 @onready var anim : AnimationPlayer = $AnimationPlayer
 @onready var node_2d: Node2D = $"."
 @onready var player: CharacterBody2D = $"../CharacterBody2D"
+@onready var crab_hurt : AudioStreamPlayer2D = $"Crab Hurt"
+@onready var mini_crab_sound : AudioStreamPlayer2D = $"Mini Crab"
 
 var mini_crab = preload("res://Scenes/mini_crab.tscn")
 var max_health : float
@@ -95,6 +97,7 @@ func _on_area_entered(area: Area2D) -> void:
 		throw_mini_crabs()
 	
 func _remove_health():
+		crab_hurt.play()
 		health.value -= 1
 	
 func _manage_animation(animation : String):
@@ -113,6 +116,6 @@ func throw_mini_crabs():
 		crab.spawn_position = node_2d.global_position + random_offset
 		
 		get_parent().add_child(crab)
-		
+		mini_crab_sound.play()
 		# Randomize spawn timing
 		await get_tree().create_timer(1.5).timeout

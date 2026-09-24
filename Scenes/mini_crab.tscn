@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dbm6u6js3q8hi" path="res://Scripts/mini_crab.gd" id="1_ftsmc"]
 [ext_resource type="Texture2D" uid="uid://hf0ajxgn6i20" path="res://Sprites/Entities/Crab Sprite Sheet.png" id="1_w0mhk"]
+[ext_resource type="AudioStream" uid="uid://e67ualw7bk6w" path="res://Sounds/kick.wav" id="3_tfeo4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ftsmc"]
 size = Vector2(22, 11.5)
@@ -58,6 +59,9 @@ libraries/ = SubResource("AnimationLibrary_tfeo4")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=433900708]
 position = Vector2(-4, 10.5)
 shape = SubResource("RectangleShape2D_g5dd7")
+
+[node name="Disappear" type="AudioStreamPlayer2D" parent="." unique_id=1401215282]
+stream = ExtResource("3_tfeo4")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

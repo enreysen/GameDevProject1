@@ -138,7 +138,7 @@ stream = ExtResource("5_fy532")
 
 [node name="Dash" type="AudioStreamPlayer2D" parent="." unique_id=1437811183]
 stream = ExtResource("5_mo788")
-volume_db = 1.075
+volume_db = 10.034
 
 [connection signal="timeout" from="Weapon Timer" to="." method="_on_weapon_timer_timeout"]
 [connection signal="timeout" from="Weapon Timer" to="." method="_on_timer_timeout"]

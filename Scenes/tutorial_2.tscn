@@ -2,11 +2,14 @@
 
 [ext_resource type="PackedScene" uid="uid://c6nixe4dxbked" path="res://Scenes/player.tscn" id="2_ccwba"]
 [ext_resource type="PackedScene" uid="uid://yv8aumc6p6k2" path="res://Scenes/tutorial_2_layout.tscn" id="3_oja5n"]
+[ext_resource type="AudioStream" uid="uid://bbu5t8x6si8fh" path="res://Sounds/punch.wav" id="5_hup4c"]
 [ext_resource type="Script" uid="uid://meg5usovlrq0" path="res://Scripts/crab.gd" id="5_i3duj"]
+[ext_resource type="AudioStream" uid="uid://7pyxx2akobm" path="res://Sounds/air_burst.wav" id="6_27s4v"]
 [ext_resource type="Texture2D" uid="uid://hf0ajxgn6i20" path="res://Sprites/Entities/Crab Sprite Sheet.png" id="6_i3duj"]
 [ext_resource type="PackedScene" uid="uid://c6odshslp0owr" path="res://Scenes/moving_wall.tscn" id="6_rd2he"]
 [ext_resource type="Script" uid="uid://ch4gqmbbxwjdx" path="res://Scripts/moving_wall.gd" id="7_oja5n"]
 [ext_resource type="Texture2D" uid="uid://b25hb4vperw5b" path="res://Sprites/Backgrounds/background.png" id="8_oja5n"]
+[ext_resource type="AudioStream" uid="uid://d3780m8x6227a" path="res://Sounds/BEACHY-continued.mp3" id="8_scb3a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rd2he"]
 size = Vector2(67, 29)
@@ -112,6 +115,12 @@ offset_right = 4.0
 offset_bottom = -39.0
 max_value = 300.0
 
+[node name="Crab Hurt" type="AudioStreamPlayer2D" parent="Half_Crab" unique_id=1738334283]
+stream = ExtResource("5_hup4c")
+
+[node name="Mini Crab" type="AudioStreamPlayer2D" parent="Half_Crab" unique_id=1312897224]
+stream = ExtResource("6_27s4v")
+
 [node name="Moving Wall" parent="." unique_id=1445278934 instance=ExtResource("6_rd2he")]
 position = Vector2(379, -127)
 collision_layer = 8
@@ -163,6 +172,11 @@ offset_right = 368.0
 offset_bottom = 14.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_oja5n")
 text = "  Jump with space bar  "
+
+[node name="Background Music" type="AudioStreamPlayer2D" parent="." unique_id=1721533796]
+stream = ExtResource("8_scb3a")
+autoplay = true
+parameters/looping = true
 
 [connection signal="area_entered" from="Half_Crab" to="Half_Crab" method="_on_area_entered"]
 [connection signal="body_entered" from="Half_Crab" to="Half_Crab" method="_on_body_entered"]
