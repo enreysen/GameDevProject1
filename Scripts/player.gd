@@ -23,6 +23,7 @@ var move_input : float
 @onready var underwater_shoot : AudioStreamPlayer2D
 @onready var hurt_sound : AudioStreamPlayer2D = $Hurt
 @onready var dash_sound : AudioStreamPlayer2D = $Dash
+@onready var dash_label : Label = $"../Moving Wall/Ground"
 
 var underwater = false
 var move_animation : String
@@ -38,6 +39,7 @@ var can_dash = true
 var can_jump = true
 
 func _ready() -> void:
+	dash_label.visible = true
 	if node_2d.has_meta("is_underwater"):
 		underwater = node_2d.get_meta("is_underwater")
 		
@@ -62,6 +64,8 @@ func _ready() -> void:
 		gravity = 100
 		air_sound = $Air
 		underwater_shoot = $"Underwater Shoot"
+		dash_label.position.x += 20
+		dash_label.position.y -= 45
 		
 	_manage_animation(move_animation)
 
@@ -78,7 +82,7 @@ func _physics_process(delta: float) -> void:
 	if stunned:
 		move_speed = 0
 	else:
-		move_speed = 2500
+		move_speed = 2000
 		
 	move_input = Input.get_axis("move_left", "move_right")
 	
@@ -196,6 +200,7 @@ func _manage_animation(animation: String):
 func dash():
 	dash_sound.play()
 	can_dash = false
+	dash_label.visible = false
 	if not slowed:
 		for i in range(8):
 			position.x += 5
@@ -210,6 +215,7 @@ func _on_weapon_timer_timeout() -> void:
 
 func _on_dash_timer_timeout() -> void:
 	can_dash = true
+	dash_label.visible = true
 	
 	
 func jump_animation_func() -> void:

@@ -16,7 +16,7 @@ var ceiling = 375
 var going_to_ceiling = true
 var animation : String
 var base_speed_increase = 30
-var faster_speed_increase = 50
+var faster_speed_increase = 40
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -47,6 +47,7 @@ func _ready() -> void:
 		health.position = Vector2(-75.0, -170.0)
 	else:
 		health.position = Vector2(-125.0, -100.0)
+	pass
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

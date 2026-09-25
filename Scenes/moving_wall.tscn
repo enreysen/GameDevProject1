@@ -3,6 +3,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jcw0c"]
 size = Vector2(20.5, 469)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o0prf"]
+bg_color = Color(0.24705882, 0.7372549, 0.8352941, 1)
+
 [node name="AnimatableBody2D" type="AnimatableBody2D" unique_id=1445278934 groups=["Wall"]]
 collision_layer = 16
 collision_mask = 16
@@ -14,3 +17,13 @@ shape = SubResource("RectangleShape2D_jcw0c")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1607622903]
 offset = Vector2(-180, 50)
 zoom = Vector2(3, 3)
+
+[node name="Ground" type="Label" parent="." unique_id=1829533620]
+offset_left = -80.0
+offset_top = -45.0
+offset_right = -16.0
+offset_bottom = -31.0
+theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = SubResource("StyleBoxFlat_o0prf")
+text = "Dash Ready!"
+horizontal_alignment = 1
