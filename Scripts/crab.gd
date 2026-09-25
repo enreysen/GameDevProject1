@@ -53,7 +53,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 			
 	if health.value <= 0 and tutorial:
-		get_tree().change_scene_to_file("res://scenes/tutorial_to_main.tscn")
+		get_tree().change_scene_to_file("res://Scenes/tutorial_to_main.tscn")
 	
 func _physics_process(delta: float) -> void:
 	if not underwater and health.value > max_health / 2:
