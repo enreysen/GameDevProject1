@@ -3,6 +3,7 @@ extends AnimatableBody2D
 @onready var camera = $Camera2D
 var underwater = false
 var tutorial = false
+var wall_speed = 30
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -12,13 +13,12 @@ func _ready() -> void:
 	if node_2d.has_meta("is_tutorial"):
 		tutorial = node_2d.get_meta("is_tutorial")
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	if underwater: 
-		if not tutorial: 
+func _physics_process(delta: float) -> void:
+	if underwater:
+		if not tutorial:
 			camera.zoom = Vector2(2.0, 2.0)
-			position.x += 1
+			position.x += wall_speed * delta
 		else:
-			position.y -= 1
+			position.y -= wall_speed * delta
 	else:
-		position.x += 1
+		position.x += wall_speed * delta

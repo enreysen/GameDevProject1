@@ -15,6 +15,8 @@ var tutorial  = false
 var ceiling = 375
 var going_to_ceiling = true
 var animation : String
+var base_speed_increase = 30
+var faster_speed_increase = 50
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -48,28 +50,28 @@ func _ready() -> void:
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	
-	# movement speed
-	if not underwater and health.value > max_health / 2:
-			position.x += 0.50
-			print("Not underwater, not angry")
-	elif not underwater and not tutorial and health.value <= max_health / 2:
-			position.x += 0.70
-			print("angry!")
-
-	elif underwater and not tutorial:
-		position.x += 0.70
-		global_position.y = player.global_position.y + 15
-		print("Underwater speed")
-			
-	elif not underwater and tutorial:
-		print("Tutorial speed")
-		position.x += 0.50
 			
 	if health.value <= 0 and tutorial:
 		get_tree().change_scene_to_file("res://scenes/tutorial_to_main.tscn")
 	
-
+func _physics_process(delta: float) -> void:
+	if not underwater and health.value > max_health / 2:
+		position.x += base_speed_increase * delta
+		print("Not underwater, not angry")
+		
+	elif not underwater and not tutorial and health.value <= max_health / 2:
+		position.x += faster_speed_increase * delta
+		print("angry!")
+		
+	elif underwater and not tutorial:
+		position.x += faster_speed_increase * delta
+		global_position.y = player.global_position.y + 15
+		print("Underwater speed")
+		
+	elif not underwater and tutorial:
+		print("Tutorial speed")
+		position.x += base_speed_increase * delta
+		
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
 		# restart level
