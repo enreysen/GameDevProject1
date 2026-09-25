@@ -23,12 +23,6 @@ size = Vector2(265, 366)
 
 [node name="Player" parent="." unique_id=60867601 instance=ExtResource("1_2u8qt")]
 position = Vector2(-23, 502)
-move_speed = null
-acceleration = null
-braking = null
-gravity = null
-jump_force = null
-stunned = null
 metadata/is_underwater = true
 metadata/is_tutorial = true
 
@@ -52,14 +46,15 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_2u8qt")
 
 [node name="Movement Label" type="Label" parent="." unique_id=305812774]
 z_index = -2
-offset_left = -59.0
-offset_top = 344.0
-offset_right = 220.0
-offset_bottom = 523.0
+offset_left = 38.0
+offset_top = 358.0
+offset_right = 348.0
+offset_bottom = 537.0
 text = "Float up  by holding spacebar
-Dash forward with D / right arrow key
 
-"
+Move forward with D or  right arrow key
+
+Dash forward with F"
 script = ExtResource("6_2u8qt")
 
 [node name="Pufferfish Label" type="Label" parent="." unique_id=915257994]
@@ -73,10 +68,10 @@ horizontal_alignment = 1
 
 [node name="Fish Show Label" type="Label" parent="." unique_id=1953733784]
 z_index = -2
-offset_left = 267.0
-offset_top = 353.0
-offset_right = 563.0
-offset_bottom = 428.0
+offset_left = 347.0
+offset_top = 356.0
+offset_right = 643.0
+offset_bottom = 431.0
 text = "Fish slow you while in water"
 
 [node name="Jellyfish" type="Label" parent="." unique_id=1771593988]

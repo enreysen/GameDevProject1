@@ -137,8 +137,8 @@ _data = {
 }
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=67976220]
-collision_layer = 133
-collision_mask = 133
+collision_layer = 149
+collision_mask = 149
 script = ExtResource("1_cvnsp")
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=1852300113]

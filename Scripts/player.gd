@@ -30,6 +30,7 @@ var shoot_animation : String
 var stun_animation : String
 var slow_animation : String
 var jump_animation : String
+var idle_animation : String
 var tutorial = false
 
 var can_shoot = true
@@ -51,6 +52,7 @@ func _ready() -> void:
 		jump_animation = "player_jump"
 		gravity = 500
 		jump_sound = $Jump
+		idle_animation = "player_idle"
 	else:
 		move_animation = "player_swim_straight"
 		shoot_animation = "player_swim_shoot"
@@ -83,16 +85,29 @@ func _physics_process(delta: float) -> void:
 	# idea is player keeps moving forward
 	# they move faster if looking right, slower if looking left
 	if move_input == 1.0:
+		if not stunned:
+			if not slowed:
+				velocity.x = move_speed 
+			else:
+				velocity.x = move_speed / 5
+				
+			_manage_animation(move_animation)
+		else:
+			_manage_animation(stun_animation)
+			velocity.x = 0 
+			
+	elif move_input == -1.0:
+		velocity.x = 15
+	else:
+		if not stunned:
+			_manage_animation(idle_animation)
+		else:
+			_manage_animation(stun_animation)
+		velocity.x = 0
+		
+	if Input.is_action_just_pressed("dash"):
 		if can_dash and not stunned:
 			dash()
-				
-	elif move_input == -1.0:
-		velocity.x = move_speed * 0.5
-	else:
-		if not slowed:
-			velocity.x = move_speed 
-		else:
-			velocity.x = move_speed / 5
 	
 	# shoot projectile
 	if Input.is_action_just_pressed("shoot") and not stunned and can_shoot:
