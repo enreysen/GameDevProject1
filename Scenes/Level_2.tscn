@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c6odshslp0owr" path="res://Scenes/moving_wall.tscn" id="4_wn4i5"]
 [ext_resource type="Script" uid="uid://ch4gqmbbxwjdx" path="res://Scripts/moving_wall.gd" id="5_2g134"]
 [ext_resource type="PackedScene" uid="uid://6waveewgthtk" path="res://Scenes/ground.tscn" id="5_4ge3q"]
+[ext_resource type="Script" uid="uid://c8plxtqghoiwj" path="res://Scripts/transition.gd" id="8_001cu"]
 [ext_resource type="Texture2D" uid="uid://bgx2llbry6l4e" path="res://Sprites/Backgrounds/Underwater Layers/underwater-fantasy-preview.png" id="8_4ge3q"]
 [ext_resource type="Script" uid="uid://cbyk8kg7kigtg" path="res://Scripts/lose_transition.gd" id="8_8npbe"]
 [ext_resource type="AudioStream" uid="uid://d3780m8x6227a" path="res://Sounds/BEACHY-continued.mp3" id="9_001cu"]
@@ -18,7 +19,7 @@ border_color = Color(0, 0, 0, 1)
 bg_color = Color(0.34117648, 0.6392157, 1, 0.7411765)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g5dd7"]
-size = Vector2(1117.875, 465)
+size = Vector2(1410, 465)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x4txr"]
 size = Vector2(115, 473)
@@ -26,12 +27,14 @@ size = Vector2(115, 473)
 [node name="Level2" type="Node2D" unique_id=1459786945]
 
 [node name="CharacterBody2D" parent="." unique_id=60867601 instance=ExtResource("9_8npbe")]
-position = Vector2(257, 529)
+position = Vector2(340, 536)
 metadata/is_underwater = true
 metadata/is_tutorial = false
 
 [node name="Crab" parent="." unique_id=2141718950 instance=ExtResource("2_vgr4u")]
-position = Vector2(198, 599)
+position = Vector2(241, 560)
+collision_layer = 161
+collision_mask = 161
 script = ExtResource("4_4ge3q")
 metadata/is_underwater = true
 
@@ -64,10 +67,11 @@ position = Vector2(730.00006, 434.00003)
 scale = Vector2(1.7955732, 1.900868)
 texture = ExtResource("8_4ge3q")
 
-[node name="Win" type="Area2D" parent="." unique_id=1831014769]
+[node name="Transition" type="Area2D" parent="." unique_id=1831014769 groups=["Win"]]
+script = ExtResource("8_001cu")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Win" unique_id=1476559322]
-position = Vector2(4561.0625, 417)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Transition" unique_id=1476559322]
+position = Vector2(4415, 417)
 shape = SubResource("RectangleShape2D_g5dd7")
 
 [node name="Lose Level 2" type="Area2D" parent="." unique_id=1747430894 groups=["Lose Level 2"]]

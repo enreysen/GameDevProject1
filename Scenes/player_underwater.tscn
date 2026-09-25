@@ -121,6 +121,7 @@ frame = 60
 libraries/ = SubResource("AnimationLibrary_6vhht")
 
 [node name="Weapon Timer" type="Timer" parent="." unique_id=72085242]
+wait_time = 2.0
 one_shot = true
 
 [node name="Dash Timer" type="Timer" parent="." unique_id=970353710]

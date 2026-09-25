@@ -51,6 +51,7 @@ theme_override_styles/background = SubResource("StyleBoxFlat_cwa6x")
 theme_override_styles/fill = SubResource("StyleBoxFlat_2u8qt")
 
 [node name="Movement Label" type="Label" parent="." unique_id=305812774]
+z_index = -2
 offset_left = -59.0
 offset_top = 344.0
 offset_right = 220.0
@@ -62,6 +63,7 @@ Dash forward with D / right arrow key
 script = ExtResource("6_2u8qt")
 
 [node name="Pufferfish Label" type="Label" parent="." unique_id=915257994]
+z_index = -2
 offset_left = 515.0
 offset_top = 421.0
 offset_right = 811.0
@@ -70,6 +72,7 @@ text = "Pufferfish give you air"
 horizontal_alignment = 1
 
 [node name="Fish Show Label" type="Label" parent="." unique_id=1953733784]
+z_index = -2
 offset_left = 267.0
 offset_top = 353.0
 offset_right = 563.0
@@ -77,11 +80,12 @@ offset_bottom = 428.0
 text = "Fish slow you while in water"
 
 [node name="Jellyfish" type="Label" parent="." unique_id=1771593988]
+z_index = -2
 offset_left = 762.0
 offset_top = 364.0
 offset_right = 1058.0
 offset_bottom = 439.0
-text = "Jellyfish will stun you."
+text = "Jellyfish will stun you"
 
 [node name="CrabSpriteSheet" type="Sprite2D" parent="." unique_id=1503495479]
 position = Vector2(727.00006, 535)

@@ -71,10 +71,13 @@ _data = {
 }
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_scb3a"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hup4c"]
+bg_color = Color(0, 0, 0, 0.5529412)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oja5n"]
+bg_color = Color(0, 0, 0, 0.63529414)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hup4c"]
+bg_color = Color(0, 0, 0, 0.5019608)
 
 [node name="Node2D" type="Node2D" unique_id=510714723]
 
@@ -139,6 +142,7 @@ scale = Vector2(1.190625, 1.2388889)
 texture = ExtResource("8_oja5n")
 
 [node name="Shoot Label" type="Label" parent="." unique_id=1730880849]
+z_index = -8
 offset_left = 143.0
 offset_top = -86.0
 offset_right = 252.0
@@ -146,32 +150,41 @@ offset_bottom = -63.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_scb3a")
 text = "  Shoot with J  "
 
-[node name="Crab Health" type="Label" parent="Shoot Label" unique_id=1896096406]
-layout_mode = 0
-offset_left = 766.0
-offset_top = -24.0
-offset_right = 995.0
-offset_bottom = -1.0
-theme_override_styles/normal = SubResource("StyleBoxFlat_hup4c")
-text = "  Get the crab to zero health!  "
+[node name="Jump Label" type="Label" parent="." unique_id=1109308155]
+z_index = -8
+offset_left = 335.0
+offset_top = -142.0
+offset_right = 509.0
+offset_bottom = -119.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_oja5n")
+text = "  Jump with space bar  "
 
-[node name="Seagull Label" type="Label" parent="Shoot Label" unique_id=63042824]
-layout_mode = 0
-offset_left = 436.0
-offset_top = -44.0
-offset_right = 594.0
-offset_bottom = -21.0
+[node name="Jump Label2" type="Label" parent="." unique_id=1817958127]
+z_index = -8
+offset_left = 25.0
+offset_top = -144.0
+offset_right = 277.0
+offset_bottom = -121.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_oja5n")
+text = "Hold A or left arrow to slow pace"
+
+[node name="Seagull Label" type="Label" parent="." unique_id=63042824]
+z_index = -8
+offset_left = 579.0
+offset_top = -130.0
+offset_right = 737.0
+offset_bottom = -107.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_hup4c")
 text = "  Seagulls stun you  "
 
-[node name="Jump Label" type="Label" parent="Shoot Label" unique_id=1109308155]
-layout_mode = 0
-offset_left = 194.0
-offset_top = -9.0
-offset_right = 368.0
-offset_bottom = 14.0
-theme_override_styles/normal = SubResource("StyleBoxFlat_oja5n")
-text = "  Jump with space bar  "
+[node name="Crab Health" type="Label" parent="." unique_id=1896096406]
+z_index = -8
+offset_left = 909.0
+offset_top = -110.0
+offset_right = 1138.0
+offset_bottom = -87.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_hup4c")
+text = "  Get the crab to zero health!  "
 
 [node name="Background Music" type="AudioStreamPlayer2D" parent="." unique_id=1721533796]
 stream = ExtResource("8_scb3a")
