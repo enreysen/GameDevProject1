@@ -78,7 +78,7 @@ func _physics_process(delta: float) -> void:
 	if stunned:
 		move_speed = 0
 	else:
-		move_speed = 30
+		move_speed = 2500
 		
 	move_input = Input.get_axis("move_left", "move_right")
 	
@@ -87,11 +87,11 @@ func _physics_process(delta: float) -> void:
 	if move_input == 1.0:
 		if not stunned:
 			if not slowed:
-				velocity.x = move_speed 
+				velocity.x = move_speed * delta
+				_manage_animation(move_animation)
 			else:
-				velocity.x = move_speed / 5
-				
-			_manage_animation(move_animation)
+				velocity.x = (move_speed / 5) * delta
+				_manage_animation(slow_animation)
 		else:
 			_manage_animation(stun_animation)
 			velocity.x = 0 
