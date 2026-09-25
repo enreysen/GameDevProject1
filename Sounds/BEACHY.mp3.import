@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/BEACHY.mp3-57d323f2dbe2c775b49631f909a9da19.m
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0
