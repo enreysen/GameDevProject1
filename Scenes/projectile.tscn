@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cnn6f1iv1culq"]
 
-[ext_resource type="Texture2D" uid="uid://dv7ucg66755v3" path="res://Sprites/Tiles/tile_0151.png" id="1_f8cdk"]
 [ext_resource type="Script" uid="uid://udttd4frarhk" path="res://Scripts/projectile.gd" id="1_yr2qt"]
+[ext_resource type="Texture2D" uid="uid://by86cc7ykwpax" path="res://Sprites/Tiles/shoot.png" id="2_yr2qt"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g5dd7"]
 radius = 7.0
@@ -12,7 +12,7 @@ collision_mask = 130
 script = ExtResource("1_yr2qt")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1708446554]
-texture = ExtResource("1_f8cdk")
+texture = ExtResource("2_yr2qt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=791392064]
 shape = SubResource("CircleShape2D_g5dd7")
