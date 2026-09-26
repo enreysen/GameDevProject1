@@ -58,19 +58,15 @@ func _process(delta: float) -> void:
 func _physics_process(delta: float) -> void:
 	if not underwater and health.value > max_health / 2:
 		position.x += base_speed_increase * delta
-		print("Not underwater, not angry")
 		
 	elif not underwater and not tutorial and health.value <= max_health / 2:
 		position.x += faster_speed_increase * delta
-		print("angry!")
 		
 	elif underwater and not tutorial:
 		position.x += faster_speed_increase * delta
 		global_position.y = player.global_position.y + 15
-		print("Underwater speed")
 		
 	elif not underwater and tutorial:
-		print("Tutorial speed")
 		position.x += base_speed_increase * delta
 		
 func _on_body_entered(body: Node2D) -> void:

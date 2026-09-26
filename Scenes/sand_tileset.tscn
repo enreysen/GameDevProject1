@@ -47,10 +47,6 @@ position = Vector2(879, 527)
 [node name="Barrel10" parent="." unique_id=7810421 instance=ExtResource("3_i1act")]
 position = Vector2(788, 527)
 
-[node name="Seagull" parent="." unique_id=701119995 groups=["Seagull"] instance=ExtResource("3_lia0d")]
-position = Vector2(513, 485)
-collision_mask = 9
-
 [node name="Seagull2" parent="." unique_id=773013994 groups=["Seagull"] instance=ExtResource("3_lia0d")]
 position = Vector2(616, 415)
 collision_mask = 9
@@ -105,10 +101,6 @@ collision_mask = 9
 
 [node name="Seagull17" parent="." unique_id=650116406 groups=["Seagull"] instance=ExtResource("3_lia0d")]
 position = Vector2(3076, 472)
-collision_mask = 9
-
-[node name="Seagull18" parent="." unique_id=1805284459 groups=["Seagull"] instance=ExtResource("3_lia0d")]
-position = Vector2(3275, 462)
 collision_mask = 9
 
 [node name="Seagull19" parent="." unique_id=22757407 groups=["Seagull"] instance=ExtResource("3_lia0d")]

@@ -1,12 +1,14 @@
 [gd_scene format=3 uid="uid://bxf7xemgv0kry"]
 
 [ext_resource type="Texture2D" uid="uid://hf0ajxgn6i20" path="res://Sprites/Entities/Crab Sprite Sheet.png" id="1_qw3x7"]
+[ext_resource type="Script" uid="uid://drs7756x4bjoc" path="res://Scripts/retry.gd" id="2_0h8dw"]
 [ext_resource type="Texture2D" uid="uid://bgx2llbry6l4e" path="res://Sprites/Backgrounds/Underwater Layers/underwater-fantasy-preview.png" id="2_qw3x7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gtf41"]
 bg_color = Color(0, 0, 0, 0.6745098)
 
 [node name="Node2D" type="Node2D" unique_id=1012267708 groups=["Level 2"]]
+script = ExtResource("2_0h8dw")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=668408152]
 zoom = Vector2(3, 3)
@@ -44,3 +46,5 @@ z_index = -2
 position = Vector2(235.99998, 8.000001)
 scale = Vector2(1.1575521, 1.3072916)
 texture = ExtResource("2_qw3x7")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
