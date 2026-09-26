@@ -44,7 +44,7 @@ func _ready() -> void:
 		big_crab.position.x += 10
 		await get_tree().create_timer(0.10).timeout
 		
-	for i in range(20):
+	for i in range(3):
 		big_crab.position.x += 10
 		await get_tree().create_timer(0.10).timeout
 		

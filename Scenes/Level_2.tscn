@@ -19,7 +19,7 @@ border_color = Color(0, 0, 0, 1)
 bg_color = Color(0.34117648, 0.6392157, 1, 0.7411765)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g5dd7"]
-size = Vector2(1410, 465)
+size = Vector2(1485, 465)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x4txr"]
 size = Vector2(115, 473)
@@ -60,7 +60,7 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_2xbik")
 z_index = -4000
 scroll_offset = Vector2(6548, -26)
 repeat_size = Vector2(1379, 0)
-repeat_times = 5
+repeat_times = 7
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=2036411419]
 position = Vector2(730.00006, 434.00003)
@@ -71,14 +71,14 @@ texture = ExtResource("8_4ge3q")
 script = ExtResource("8_001cu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Transition" unique_id=1476559322]
-position = Vector2(4415, 417)
+position = Vector2(4452.5, 417)
 shape = SubResource("RectangleShape2D_g5dd7")
 
 [node name="Lose Level 2" type="Area2D" parent="." unique_id=1747430894 groups=["Lose Level 2"]]
 script = ExtResource("8_8npbe")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Lose Level 2" unique_id=1307530737]
-position = Vector2(5179, 414.5)
+position = Vector2(5254, 409)
 shape = SubResource("RectangleShape2D_x4txr")
 
 [node name="Background Music" type="AudioStreamPlayer2D" parent="." unique_id=1664669581]
