@@ -101,7 +101,7 @@ func _physics_process(delta: float) -> void:
 			velocity.x = 0 
 			
 	elif move_input == -1.0:
-		velocity.x = 15
+		pass
 	else:
 		if not stunned:
 			_manage_animation(idle_animation)
