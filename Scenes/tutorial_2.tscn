@@ -157,7 +157,7 @@ offset_top = -139.0
 offset_right = 591.0
 offset_bottom = -116.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_oja5n")
-text = "  Jump with space bar  "
+text = "  Jump with space bar/up arrow key"
 
 [node name="Seagull Label" type="Label" parent="." unique_id=63042824]
 z_index = -8
