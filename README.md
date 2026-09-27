@@ -8,9 +8,9 @@ Crab Run is a side-scrolling platformer where players control an explorer naviga
 
 Move forward: D key/the right arrow key
 
-Jump (on land only): Spacebar
+Jump (on land only): Spacebar/the up arrow key
 
-Swim upwards (underwater only): Press spacebar for quick boost, hold down spacebar for continous upward movement
+Swim upwards (underwater only): Press spacebar/up arrow key for quick boost, hold down spacebar/up arrow key for continous upward movement
 
 Dash: F key
 
